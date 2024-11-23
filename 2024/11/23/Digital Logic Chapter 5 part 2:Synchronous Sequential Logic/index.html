@@ -7,7 +7,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://example.com/img/avatar.png">
 <meta property="article:published_time" content="2024-11-23T13:22:05.000Z">
-<meta property="article:modified_time" content="2024-11-23T18:07:10.446Z">
+<meta property="article:modified_time" content="2024-11-23T18:09:45.856Z">
 <meta property="article:author" content="Kaixun Wang">
 <meta property="article:tag" content="Digital Logic">
 <meta name="twitter:card" content="summary">
@@ -167,7 +167,7 @@
     btf.addGlobalFn('pjaxSend', preloader.initLoading, 'preloader_init')
     btf.addGlobalFn('pjaxComplete', preloader.endLoading, 'preloader_end')
   }
-})()</script><div id="web_bg" style="background-image: url(/img/favicon.jpg);"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/avatar.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">3</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">1</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">0</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archive</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(/img/favicon.jpg);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">Kaixun's Blog</span></a><a class="nav-page-title" href="/"><span class="site-name">Digital Logic Chapter 5 part 2 - Synchronous Sequential Logic</span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> Search</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archive</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">Digital Logic Chapter 5 part 2 - Synchronous Sequential Logic</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2024-11-23T13:22:05.000Z" title="Created 2024-11-23 21:22:05">2024-11-23</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2024-11-23T18:07:10.446Z" title="Updated 2024-11-24 02:07:10">2024-11-24</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post Views:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><h1 id="Digital-Logic-Chapter-5-part-2-Synchronous-Sequential-Logic"><a href="#Digital-Logic-Chapter-5-part-2-Synchronous-Sequential-Logic" class="headerlink" title="Digital Logic Chapter 5 part 2 - Synchronous Sequential Logic"></a>Digital Logic Chapter 5 part 2 - Synchronous Sequential Logic</h1><h2 id="Analysis-of-Sequential-Circuits"><a href="#Analysis-of-Sequential-Circuits" class="headerlink" title="Analysis of Sequential Circuits"></a>Analysis of Sequential Circuits</h2><h3 id="Ways-to-describe-a-digital-circuit"><a href="#Ways-to-describe-a-digital-circuit" class="headerlink" title="Ways to describe a digital circuit"></a>Ways to describe a digital circuit</h3><p>logic diagram (逻辑电路图): graphical representation of a digital circuit that uses standard symbols</p>
+})()</script><div id="web_bg" style="background-image: url(/img/favicon.jpg);"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/avatar.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">3</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">1</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">0</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archive</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(/img/favicon.jpg);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">Kaixun's Blog</span></a><a class="nav-page-title" href="/"><span class="site-name">Digital Logic Chapter 5 part 2 - Synchronous Sequential Logic</span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> Search</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archive</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">Digital Logic Chapter 5 part 2 - Synchronous Sequential Logic</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2024-11-23T13:22:05.000Z" title="Created 2024-11-23 21:22:05">2024-11-23</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2024-11-23T18:09:45.856Z" title="Updated 2024-11-24 02:09:45">2024-11-24</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post Views:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><h1 id="Digital-Logic-Chapter-5-part-2-Synchronous-Sequential-Logic"><a href="#Digital-Logic-Chapter-5-part-2-Synchronous-Sequential-Logic" class="headerlink" title="Digital Logic Chapter 5 part 2 - Synchronous Sequential Logic"></a>Digital Logic Chapter 5 part 2 - Synchronous Sequential Logic</h1><h2 id="Analysis-of-Sequential-Circuits"><a href="#Analysis-of-Sequential-Circuits" class="headerlink" title="Analysis of Sequential Circuits"></a>Analysis of Sequential Circuits</h2><h3 id="Ways-to-describe-a-digital-circuit"><a href="#Ways-to-describe-a-digital-circuit" class="headerlink" title="Ways to describe a digital circuit"></a>Ways to describe a digital circuit</h3><p>logic diagram (逻辑电路图): graphical representation of a digital circuit that uses standard symbols</p>
 <p>K-map (卡诺图): graphical representation of a logic function used to simplify Boolean expressions</p>
 <p>function table (功能表)(truth table): list of all possible input combinations and the corresponding output values for a given logic function</p>
 <p>characteristic equations (特征方程): Describe the behavior of a sequential logic circuit, the next state is defined as a function of the inputs and the present state</p>
@@ -568,11 +568,11 @@
 <td>1</td>
 </tr>
 <tr>
-<td>&#x3D;&#x3D;e&#x3D;&#x3D;</td>
-<td>&#x3D;&#x3D;a&#x3D;&#x3D;</td>
-<td>&#x3D;&#x3D;f&#x3D;&#x3D;</td>
-<td>&#x3D;&#x3D;0&#x3D;&#x3D;</td>
-<td>&#x3D;&#x3D;1&#x3D;&#x3D;</td>
+<td><u>e</u></td>
+<td><u>a</u></td>
+<td><u>f</u></td>
+<td><u>0</u></td>
+<td><u>1</u></td>
 </tr>
 <tr>
 <td>f</td>
@@ -582,14 +582,14 @@
 <td>1</td>
 </tr>
 <tr>
-<td>&#x3D;&#x3D;g&#x3D;&#x3D;</td>
-<td>&#x3D;&#x3D;a&#x3D;&#x3D;</td>
-<td>&#x3D;&#x3D;f&#x3D;&#x3D;</td>
-<td>&#x3D;&#x3D;0&#x3D;&#x3D;</td>
-<td>&#x3D;&#x3D;1&#x3D;&#x3D;</td>
+<td><u>g</u></td>
+<td><u>a</u></td>
+<td><u>f</u></td>
+<td><u>0</u></td>
+<td><u>1</u></td>
 </tr>
 </tbody></table>
-<p>**1st turn: $e \equiv g$ **</p>
+<p><strong>1st turn:</strong> $e \equiv g$</p>
 <table>
 <thead>
 <tr>
@@ -629,11 +629,11 @@
 <td>0</td>
 </tr>
 <tr>
-<td>&#x3D;&#x3D;d&#x3D;&#x3D;</td>
-<td>&#x3D;&#x3D;e&#x3D;&#x3D;</td>
-<td>&#x3D;&#x3D;f&#x3D;&#x3D;</td>
-<td>&#x3D;&#x3D;0&#x3D;&#x3D;</td>
-<td>&#x3D;&#x3D;1&#x3D;&#x3D;</td>
+<td><u>d</u></td>
+<td><u>e</u></td>
+<td><u>f</u></td>
+<td><u>0</u></td>
+<td><u>1</u></td>
 </tr>
 <tr>
 <td>e</td>
@@ -643,11 +643,11 @@
 <td>1</td>
 </tr>
 <tr>
-<td>&#x3D;&#x3D;f&#x3D;&#x3D;</td>
-<td><del>g</del>   &#x3D;&#x3D;e&#x3D;&#x3D;</td>
-<td>&#x3D;&#x3D;f&#x3D;&#x3D;</td>
-<td>&#x3D;&#x3D;0&#x3D;&#x3D;</td>
-<td>&#x3D;&#x3D;1&#x3D;&#x3D;</td>
+<td><u>f</u></td>
+<td><del>g</del>   <u>e</u></td>
+<td><u>f</u></td>
+<td><u>0</u></td>
+<td><u>1</u></td>
 </tr>
 </tbody></table>
 <p><strong>2nd turn:</strong> $d \equiv f$</p>
