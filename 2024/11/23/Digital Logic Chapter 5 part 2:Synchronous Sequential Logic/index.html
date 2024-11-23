@@ -1,0 +1,913 @@
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>Digital Logic Chapter 5 part 2 - Synchronous Sequential Logic | Kaixun's Blog</title><meta name="author" content="Kaixun Wang"><meta name="copyright" content="Kaixun Wang"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="Digital Logic Chapter 5 part 2 - Synchronous Sequential LogicAnalysis of Sequential CircuitsWays to describe a digital circuitlogic diagram (逻辑电路图): graphical representation of a digital circuit that">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Digital Logic Chapter 5 part 2 - Synchronous Sequential Logic">
+<meta property="og:url" content="http://example.com/2024/11/23/Digital%20Logic%20Chapter%205%20part%202:Synchronous%20Sequential%20Logic/index.html">
+<meta property="og:site_name" content="Kaixun&#39;s Blog">
+<meta property="og:description" content="Digital Logic Chapter 5 part 2 - Synchronous Sequential LogicAnalysis of Sequential CircuitsWays to describe a digital circuitlogic diagram (逻辑电路图): graphical representation of a digital circuit that">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/img/avatar.png">
+<meta property="article:published_time" content="2024-11-23T13:22:05.000Z">
+<meta property="article:modified_time" content="2024-11-23T17:53:56.939Z">
+<meta property="article:author" content="Kaixun Wang">
+<meta property="article:tag" content="Digital Logic">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/img/avatar.png"><link rel="shortcut icon" href="/img/avatar.png"><link rel="canonical" href="http://example.com/2024/11/23/Digital%20Logic%20Chapter%205%20part%202:Synchronous%20Sequential%20Logic/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"No results found for: ${query}","hits_stats":"${hits} articles found"}},
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":230,"highlightFullpage":false,"highlightMacStyle":true},
+  copy: {
+    success: 'Copy Successful',
+    error: 'Copy Failed',
+    noSupport: 'Browser Not Supported'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: 'Just now',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: 'Load More'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Digital Logic Chapter 5 part 2 - Synchronous Sequential Logic',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  isShuoshuo: false
+}</script><link rel="stylesheet" href="/css/custom.css" media="defer" onload="this.media='all'"><meta name="generator" content="Hexo 7.3.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">Loading...</div></div></div><script>(()=>{
+  const $loadingBox = document.getElementById('loading-box')
+  const $body = document.body
+  const preloader = {
+    endLoading: () => {
+      $body.style.overflow = ''
+      $loadingBox.classList.add('loaded')
+    },
+    initLoading: () => {
+      $body.style.overflow = 'hidden'
+      $loadingBox.classList.remove('loaded')
+    }
+  }
+
+  preloader.initLoading()
+  window.addEventListener('load', preloader.endLoading)
+
+  if (false) {
+    btf.addGlobalFn('pjaxSend', preloader.initLoading, 'preloader_init')
+    btf.addGlobalFn('pjaxComplete', preloader.endLoading, 'preloader_end')
+  }
+})()</script><div id="web_bg" style="background-image: url(/img/favicon.jpg);"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/avatar.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">3</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">1</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">0</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archive</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(/img/favicon.jpg);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">Kaixun's Blog</span></a><a class="nav-page-title" href="/"><span class="site-name">Digital Logic Chapter 5 part 2 - Synchronous Sequential Logic</span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> Search</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archive</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">Digital Logic Chapter 5 part 2 - Synchronous Sequential Logic</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2024-11-23T13:22:05.000Z" title="Created 2024-11-23 21:22:05">2024-11-23</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2024-11-23T17:53:56.939Z" title="Updated 2024-11-24 01:53:56">2024-11-24</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post Views:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><h1 id="Digital-Logic-Chapter-5-part-2-Synchronous-Sequential-Logic"><a href="#Digital-Logic-Chapter-5-part-2-Synchronous-Sequential-Logic" class="headerlink" title="Digital Logic Chapter 5 part 2 - Synchronous Sequential Logic"></a>Digital Logic Chapter 5 part 2 - Synchronous Sequential Logic</h1><h2 id="Analysis-of-Sequential-Circuits"><a href="#Analysis-of-Sequential-Circuits" class="headerlink" title="Analysis of Sequential Circuits"></a>Analysis of Sequential Circuits</h2><h3 id="Ways-to-describe-a-digital-circuit"><a href="#Ways-to-describe-a-digital-circuit" class="headerlink" title="Ways to describe a digital circuit"></a>Ways to describe a digital circuit</h3><p>logic diagram (逻辑电路图): graphical representation of a digital circuit that uses standard symbols</p>
+<p>K-map (卡诺图): graphical representation of a logic function used to simplify Boolean expressions</p>
+<p>function table (功能表)(truth table): list of all possible input combinations and the corresponding output values for a given logic function</p>
+<p>characteristic equations (特征方程): Describe the behavior of a sequential logic circuit, the next state is defined as a function of the inputs and the present state</p>
+<p>excitation&#x2F;input equation (激励方程): Defines the part of the circuit that generates the inputs to sequential logic circuit</p>
+<p>state table (状态表): tabular representation of a sequential logic circuit that shows the current state, input, next state, and output for all possible input combinations</p>
+<p>state equation (次态方程): defines the next state of a sequential logic circuit based on the current state and input values</p>
+<p>state diagram (状态图): graphical representation of a sequential logic circuit that shows the states, transitions, and input-output relationships</p>
+<h3 id="Analysis-Procedure-of-Clocked-Sequential-Circuits"><a href="#Analysis-Procedure-of-Clocked-Sequential-Circuits" class="headerlink" title="Analysis Procedure of Clocked Sequential Circuits"></a>Analysis Procedure of Clocked Sequential Circuits</h3><h4 id="Steps"><a href="#Steps" class="headerlink" title="Steps:"></a>Steps:</h4><ol>
+<li>Derive excitation&#x2F;input equations for FF inputs</li>
+<li>Derive state and output equations<br> Substitute the excitation equations into the flip-flop characteristic equations to obtain next state equations.<br> Determine the output equations according current state and input </li>
+<li>Generate state and output tables</li>
+<li>Generate state diagram</li>
+</ol>
+<p>Important: FF’s Characteristic equation:<br>DFF   $Q(t+1) &#x3D; D(t)$<br>JKFF $Q(t+1) &#x3D; J(t)Q(t)’ + K(t)’Q(t)$<br>TFF   $Q(t+1) &#x3D; T(t)’Q(t) + T(t)Q(t)’$</p>
+<h4 id="Example-1-using-DFF-Q-t-1-D-t"><a href="#Example-1-using-DFF-Q-t-1-D-t" class="headerlink" title="Example 1 using DFF $Q(t+1) &#x3D; D(t)$:"></a>Example 1 using DFF $Q(t+1) &#x3D; D(t)$:</h4><img src="https://cdn.jsdelivr.net/gh/KaixunWang/pic_bed/img/%E5%9B%BE%E5%83%8F2024-11-23%2021.56.jpeg" alt="图像2024-11-23 21.56" style="zoom:33%;" />
+
+<ol>
+<li><p>Derive excitation&#x2F;input equations for FF inputs<br> $D_A &#x3D; Q_Ax + Q_Bx$<br> $D_B &#x3D; Q_A’x$</p>
+</li>
+<li><p>State equation<br> $Q_A(t+1) &#x3D; D_A(t)&#x3D;Q_Ax + Q_Bx$<br> $Q_B(t+1) &#x3D; D_B(t) &#x3D; Q_A’(t)x(t)$</p>
+</li>
+<li><p>Output equation<br> $y(t) &#x3D; (Q_A(t) + Q_B(t))x’(t)$<br> All signals are labeled by t, thus $y &#x3D; (Q_A + Q_B)x’$</p>
+</li>
+<li><p>Generate state and output tables</p>
+<table>
+<thead>
+<tr>
+<th>Present state</th>
+<th>Present state</th>
+<th>Input</th>
+<th>Next state</th>
+<th>Next state</th>
+<th>Output</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>$Q_A$</td>
+<td>$Q_B$</td>
+<td>$x$</td>
+<td>$Q_{Anext}$</td>
+<td>$Q_{Bnext}$</td>
+<td>$y$</td>
+</tr>
+<tr>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+</tr>
+<tr>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+</tr>
+<tr>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>Generate state diagram</p>
+ <img src="https://cdn.jsdelivr.net/gh/KaixunWang/pic_bed/img/%E5%9B%BE%E5%83%8F2024-11-23%2022.45.jpeg" alt="图像2024-11-23 22.45" style="zoom:33%;" /></li>
+</ol>
+<h4 id="Example-2-using-JKFF-Q-t-1-J-t-Q-t-’-K-t-’Q-t"><a href="#Example-2-using-JKFF-Q-t-1-J-t-Q-t-’-K-t-’Q-t" class="headerlink" title="Example 2 using JKFF $Q(t+1) &#x3D; J(t)Q(t)’ + K(t)’Q(t)$:"></a>Example 2 using JKFF $Q(t+1) &#x3D; J(t)Q(t)’ + K(t)’Q(t)$:</h4><img src="https://cdn.jsdelivr.net/gh/KaixunWang/pic_bed/img/%E5%9B%BE%E5%83%8F2024-11-23%2022.48.jpeg" alt="图像2024-11-23 22.48" style="zoom:33%;" />
+
+<ol>
+<li><p>Derive excitation&#x2F;input equations for FF inputs<br> $J_A &#x3D; B$<br> $K_A&#x3D; Bx’$<br> $J_B&#x3D;x’$<br> $K_B&#x3D;A \oplus x$</p>
+</li>
+<li><p>State equation<br> $A(t+1) &#x3D; J_AA’ + K_A’A&#x3D; BA’ + (Bx’)’A$<br> $B(t+1) &#x3D; J_BB’ + K’_BB&#x3D;B’x’ +(A \oplus x)’B $</p>
+</li>
+<li><p>No extra output equations</p>
+</li>
+<li><p>Generate state and output tables</p>
+<table>
+<thead>
+<tr>
+<th>Present state</th>
+<th>Present state</th>
+<th>Input</th>
+<th>Next state</th>
+<th>Next state</th>
+<th>FF inputs</th>
+<th>FF inputs</th>
+<th>FF inputs</th>
+<th>FF inputs</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>$A$</td>
+<td>$B$</td>
+<td>$x$</td>
+<td>$A_{next}$</td>
+<td>$B_{next}$</td>
+<td>$J_A$</td>
+<td>$K_A$</td>
+<td>$J_B$</td>
+<td>$K_B$</td>
+</tr>
+<tr>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+</tr>
+<tr>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+</tr>
+<tr>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>Generate state diagram</p>
+ <img src="https://cdn.jsdelivr.net/gh/KaixunWang/pic_bed/img/%E5%9B%BE%E5%83%8F2024-11-23%2023.10.jpeg" alt="图像2024-11-23 23.10" style="zoom:33%;" /></li>
+</ol>
+<h4 id="Example-3-using-TFF-Q-t-1-T-t-’Q-t-T-t-Q-t-’"><a href="#Example-3-using-TFF-Q-t-1-T-t-’Q-t-T-t-Q-t-’" class="headerlink" title="Example 3 using TFF $Q(t+1) &#x3D; T(t)’Q(t) + T(t)Q(t)’$:"></a>Example 3 using TFF $Q(t+1) &#x3D; T(t)’Q(t) + T(t)Q(t)’$:</h4><img src="https://cdn.jsdelivr.net/gh/KaixunWang/pic_bed/img/%E5%9B%BE%E5%83%8F2024-11-23%2023.16.jpeg" alt="图像2024-11-23 23.16" style="zoom:40%;" />
+
+<ol>
+<li><p>Derive excitation&#x2F;input equations for FF inputs<br> $T_A &#x3D; Bx$<br> $T_B &#x3D; x$</p>
+</li>
+<li><p>State equation<br> $A(t+1) &#x3D; T_A \oplus Q_A &#x3D; (Bx) \oplus A$<br> $B(t+1)&#x3D;T_B \oplus Q_B &#x3D; x \oplus B$</p>
+</li>
+<li><p>Output equation<br> $y &#x3D; AB$</p>
+</li>
+<li><p>Generate state and output tables</p>
+<table>
+<thead>
+<tr>
+<th>Present state</th>
+<th>Present state</th>
+<th>Input</th>
+<th>Next state</th>
+<th>Next state</th>
+<th>Output</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>$A$</td>
+<td>$B$</td>
+<td>$x$</td>
+<td>$A_{next}$</td>
+<td>$B_{next}$</td>
+<td>$y$</td>
+</tr>
+<tr>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+</tr>
+<tr>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+</tr>
+<tr>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>Generate state diagram</p>
+ <img src="https://cdn.jsdelivr.net/gh/KaixunWang/pic_bed/img/%E5%9B%BE%E5%83%8F2024-11-23%2023.29.jpeg" alt="图像2024-11-23 23.29" style="zoom:33%;" /></li>
+</ol>
+<h2 id="Finite-State-Machine"><a href="#Finite-State-Machine" class="headerlink" title="Finite State Machine"></a>Finite State Machine</h2><p>A synchronous sequential circuit can be modeled by FSM.</p>
+<p>State register $𝑞(t+1) &#x3D; 𝑞_{next}(t)$<br>    Stores current state<br>    Loads next state at clock edge</p>
+<p>Combinational logic<br>    Computes next state (next state logic $h: x × 𝑞 → 𝑞_{𝑛𝑒𝑥𝑡}$ )<br>    Computes outputs<br>        output logic $f: x × 𝑞 → 𝑦$ (Mealy machine, with blue line)<br>                or $f: 𝑞 → 𝑦$ (Moore machine, without blue line)</p>
+<img src="https://cdn.jsdelivr.net/gh/KaixunWang/pic_bed/img/%E5%9B%BE%E5%83%8F2024-11-23%2023.47.jpeg" alt="图像2024-11-23 23.47" style="zoom:33%;" />
+
+<p>Two types of finite state machines differ in output logic:<br>    Moore FSM: outputs depend only on current state<br>    Mealy FSM: outputs depend on current state and inputs, to synchronize a Mealy circuit, the inputs must be synchronized with the clock and the outputs must be sampled immediately before the clock edge</p>
+<img src="https://cdn.jsdelivr.net/gh/KaixunWang/pic_bed/img/%E5%9B%BE%E5%83%8F2024-11-23%2023.56.jpeg" alt="图像2024-11-23 23.56" style="zoom:33%;" />
+
+<h2 id="State-Minimization-Encoding"><a href="#State-Minimization-Encoding" class="headerlink" title="State Minimization &amp; Encoding"></a>State Minimization &amp; Encoding</h2><h3 id="State-minimization"><a href="#State-minimization" class="headerlink" title="State minimization"></a>State minimization</h3><p>Reductions on the number of flip-flops (states) and the number of gates.<br>For an FSM with m states, we need $log_2m$ FFs.</p>
+<p>Reduction steps</p>
+<ol>
+<li>Find rows in the state table that have identical next state and output entries. They correspond to equivalent states. If there are no equivalent states, stop.</li>
+<li>When 2 states are equivalent, one of them can be removed. Update the entries of the remaining table to cancel the removed state. Go to 1.</li>
+</ol>
+<p>Example:<br><img src="https://cdn.jsdelivr.net/gh/KaixunWang/pic_bed/img/%E5%9B%BE%E5%83%8F2024-11-24%2000.27.jpeg" alt="图像2024-11-24 00.27" style="zoom:50%;" /> $\longrightarrow$<img src="https://cdn.jsdelivr.net/gh/KaixunWang/pic_bed/img/%E5%9B%BE%E5%83%8F2024-11-24%2000.29.jpeg" alt="图像2024-11-24 00.29" style="zoom:50%;" /></p>
+<p><strong>Start table:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Present state</th>
+<th>Next state</th>
+<th>Next state</th>
+<th>Output</th>
+<th>Output</th>
+</tr>
+</thead>
+<tbody><tr>
+<td></td>
+<td>$x&#x3D;0$</td>
+<td>$x&#x3D;1$</td>
+<td>$x&#x3D;0$</td>
+<td>$x&#x3D;1$</td>
+</tr>
+<tr>
+<td>a</td>
+<td>a</td>
+<td>b</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>b</td>
+<td>c</td>
+<td>d</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>c</td>
+<td>a</td>
+<td>d</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>d</td>
+<td>e</td>
+<td>f</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr>
+<td>&#x3D;&#x3D;e&#x3D;&#x3D;</td>
+<td>&#x3D;&#x3D;a&#x3D;&#x3D;</td>
+<td>&#x3D;&#x3D;f&#x3D;&#x3D;</td>
+<td>&#x3D;&#x3D;0&#x3D;&#x3D;</td>
+<td>&#x3D;&#x3D;1&#x3D;&#x3D;</td>
+</tr>
+<tr>
+<td>f</td>
+<td>g</td>
+<td>f</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr>
+<td>&#x3D;&#x3D;g&#x3D;&#x3D;</td>
+<td>&#x3D;&#x3D;a&#x3D;&#x3D;</td>
+<td>&#x3D;&#x3D;f&#x3D;&#x3D;</td>
+<td>&#x3D;&#x3D;0&#x3D;&#x3D;</td>
+<td>&#x3D;&#x3D;1&#x3D;&#x3D;</td>
+</tr>
+</tbody></table>
+<p>**1st turn: $e \equiv g$ **</p>
+<table>
+<thead>
+<tr>
+<th>Present state</th>
+<th>Next state</th>
+<th>Next state</th>
+<th>Output</th>
+<th>Output</th>
+</tr>
+</thead>
+<tbody><tr>
+<td></td>
+<td>$x&#x3D;0$</td>
+<td>$x&#x3D;1$</td>
+<td>$x&#x3D;0$</td>
+<td>$x&#x3D;1$</td>
+</tr>
+<tr>
+<td>a</td>
+<td>a</td>
+<td>b</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>b</td>
+<td>c</td>
+<td>d</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>c</td>
+<td>a</td>
+<td>d</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>&#x3D;&#x3D;d&#x3D;&#x3D;</td>
+<td>&#x3D;&#x3D;e&#x3D;&#x3D;</td>
+<td>&#x3D;&#x3D;f&#x3D;&#x3D;</td>
+<td>&#x3D;&#x3D;0&#x3D;&#x3D;</td>
+<td>&#x3D;&#x3D;1&#x3D;&#x3D;</td>
+</tr>
+<tr>
+<td>e</td>
+<td>a</td>
+<td>f</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr>
+<td>&#x3D;&#x3D;f&#x3D;&#x3D;</td>
+<td><del>g</del>   &#x3D;&#x3D;e&#x3D;&#x3D;</td>
+<td>&#x3D;&#x3D;f&#x3D;&#x3D;</td>
+<td>&#x3D;&#x3D;0&#x3D;&#x3D;</td>
+<td>&#x3D;&#x3D;1&#x3D;&#x3D;</td>
+</tr>
+</tbody></table>
+<p>**2nd turn: $d \equiv f$ **</p>
+<table>
+<thead>
+<tr>
+<th>Present state</th>
+<th>Next state</th>
+<th>Next state</th>
+<th>Output</th>
+<th>Output</th>
+</tr>
+</thead>
+<tbody><tr>
+<td></td>
+<td>$x&#x3D;0$</td>
+<td>$x&#x3D;1$</td>
+<td>$x&#x3D;0$</td>
+<td>$x&#x3D;1$</td>
+</tr>
+<tr>
+<td>a</td>
+<td>a</td>
+<td>b</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>b</td>
+<td>c</td>
+<td>d</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>c</td>
+<td>a</td>
+<td>d</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>d</td>
+<td>e</td>
+<td><del>f</del>   d</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr>
+<td>e</td>
+<td>a</td>
+<td><del>f</del>   d</td>
+<td>0</td>
+<td>1</td>
+</tr>
+</tbody></table>
+<h3 id="Encoding-assign-binary-state-to-the-states"><a href="#Encoding-assign-binary-state-to-the-states" class="headerlink" title="Encoding(assign binary state to the states)"></a>Encoding(assign binary state to the states)</h3><p>Different state encodings (assignments) result in different circuits for the intended FSM.<br>There is no easy state-encoding procedure that guarantees a minimal-cost or minimum-delay combinational circuits<br>    Exploration of all possibilities are impossible.<br>    Heuristic are often used.<br>        Binary counting<br>        Minimum-bit change<br>        One-hot encoding</p>
+<h2 id="Design-of-Sequential-Circuits"><a href="#Design-of-Sequential-Circuits" class="headerlink" title="Design of Sequential Circuits"></a>Design of Sequential Circuits</h2><h3 id="Design-Procedure-of-Sequential-Circuits"><a href="#Design-Procedure-of-Sequential-Circuits" class="headerlink" title="Design Procedure of Sequential Circuits"></a>Design Procedure of Sequential Circuits</h3><ol>
+<li>Specification: design description or timing diagram</li>
+<li>Formulation: develop state diagram</li>
+<li>Generate state and output tables</li>
+<li>Minimize States if necessary</li>
+<li>Assign binary values to the state (encoding)</li>
+<li>Derive state and output equations</li>
+<li><strong>Choose memory elements (DFFs, JKFFs, TFFs)</strong></li>
+<li>Derive simplified excitation&#x2F;input equations and output equations</li>
+<li>Draw logic schematic</li>
+</ol>
+<h3 id="Choice-of-Memory-Elements"><a href="#Choice-of-Memory-Elements" class="headerlink" title="Choice of Memory Elements"></a>Choice of Memory Elements</h3><p>Given the state transition table, we wish to find the FF input conditions that will cause the required transition.<br>    A tool for such a purpose is the excitation table, which can be derived from the characteristic table&#x2F;equation.<br>    D FFs are good for applications requiring data transfer (shift registers).<br>    T FFs are good for those involving complementation (binary counters).<br>    Many digital systems are constructed entirely with JK FFs because they are the most versatile available.</p>
+<h3 id="FF’s-Excitation-Table"><a href="#FF’s-Excitation-Table" class="headerlink" title="FF’s Excitation Table"></a>FF’s Excitation Table</h3><img src="https://cdn.jsdelivr.net/gh/KaixunWang/pic_bed/img/%E5%9B%BE%E5%83%8F2024-11-24%2001.51.jpeg" alt="图像2024-11-24 01.51" style="zoom:33%;" />
+
+<h3 id="Design-Example-Design-with-DFF-A-Sequence-Detector"><a href="#Design-Example-Design-with-DFF-A-Sequence-Detector" class="headerlink" title="Design Example: Design with DFF: A Sequence Detector"></a>Design Example: Design with DFF: A Sequence Detector</h3><ol>
+<li><p>Detect three consecutive 1’s in a string of bits (using Moore machine, overlapping)<br> If detected, output&#x3D;1; otherwise output&#x3D;0</p>
+</li>
+<li><p>State diagram</p>
+ <img src="https://cdn.jsdelivr.net/gh/KaixunWang/pic_bed/img/%E5%9B%BE%E5%83%8F2024-11-24%2001.15.jpeg" alt="图像2024-11-24 01.15" style="zoom:33%;" />
+</li>
+<li><p>State and output table</p>
+<table>
+<thead>
+<tr>
+<th>Present state</th>
+<th>Next state</th>
+<th>Next state</th>
+<th>Output</th>
+<th>Output</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>$S(AB)$</td>
+<td>$x&#x3D;0$</td>
+<td>$x&#x3D;1$</td>
+<td>$x&#x3D;0$</td>
+<td>$x&#x3D;1$</td>
+</tr>
+<tr>
+<td>$S_0 (00)$</td>
+<td>$S_0$</td>
+<td>$S_1$</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>$S_1(01)$</td>
+<td>$S_0$</td>
+<td>$S_2$</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>$S_2(10)$</td>
+<td>$S_0$</td>
+<td>$S_3$</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>$S_3(11)$</td>
+<td>$S_0$</td>
+<td>$S_3$</td>
+<td>1</td>
+<td>1</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>No need for simplification</p>
+</li>
+<li><p>State assignment in 3</p>
+</li>
+<li><p>Derive state and output equations</p>
+<table>
+<thead>
+<tr>
+<th>$A(t)$</th>
+<th>$B(t)$</th>
+<th>$x$</th>
+<th>$A(t+1)$</th>
+<th>$B(t+1)$</th>
+<th>$y$</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+</tr>
+<tr>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+</tbody></table>
+<p> $A(t+1)&#x3D;D_A(A(t),B(t),x)&#x3D;\Sigma(3,5,7)$<br> $B(t+1)&#x3D;D_B(A(t),B(t),x)&#x3D;\Sigma(1,5,7)$<br> $y(A,B,x)&#x3D;\Sigma(6,7)$</p>
+</li>
+<li><p>Choose DFFs<br> 2 bits encoding leads to 2 DFFs.<br> $A(t+1) &#x3D;D_A(t)$<br> $B(t+1)&#x3D;D_B(t)$</p>
+</li>
+<li><p>Derive simplified excitation&#x2F;input equations and output equations</p>
+ <img src="https://cdn.jsdelivr.net/gh/KaixunWang/pic_bed/img/%E5%9B%BE%E5%83%8F2024-11-24%2001.47.jpeg" alt="图像2024-11-24 01.47" style="zoom:40%;" />
+ $D_A=Ax+Bx$
+ $D_B=Ax+B'x$
+ $y=AB$
+</li>
+<li><p>Logic schematic(Omitted)</p>
+</li>
+</ol>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>Author: </span><span class="post-copyright-info"><a href="http://example.com">Kaixun Wang</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>Link: </span><span class="post-copyright-info"><a href="http://example.com/2024/11/23/Digital%20Logic%20Chapter%205%20part%202:Synchronous%20Sequential%20Logic/">http://example.com/2024/11/23/Digital%20Logic%20Chapter%205%20part%202:Synchronous%20Sequential%20Logic/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>Copyright Notice: </span><span class="post-copyright-info">All articles on this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless otherwise stated.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Digital-Logic/">Digital Logic</a></div><div class="post-share"><div class="social-share" data-image="/img/avatar.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related full-width" href="/2024/11/22/Digital%20Logic%20Chapter%205%20part1:Latches%20and%20Flip-flops/" title="Digital Logic Chapter 5 part 1 - Latches and Flip-flops"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-right"><div class="info-1"><div class="info-item-1">Next</div><div class="info-item-2">Digital Logic Chapter 5 part 1 - Latches and Flip-flops</div></div><div class="info-2"><div class="info-item-1">Digital Logic Chapter 5 part 1 - Latches and Flip-flopsSequential CircuitsA sequential circuit consists of a combinational circuit to which storage elements are connected to form a feedback path.The binary information stored in the memory elements at any given time defines the state of the sequential circuits.$(inputs, current State)$ $\Longrightarrow$ $(outputs, next State)$, the behavior is specified by a time sequence of inputs and internal states. Synchronous Sequential CircuitsA system...</div></div></div></a></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>Related Articles</span></div><div class="relatedPosts-list"><a class="pagination-related" href="/2024/11/22/Digital%20Logic%20Chapter%205%20part1:Latches%20and%20Flip-flops/" title="Digital Logic Chapter 5 part 1 - Latches and Flip-flops"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2024-11-22</div><div class="info-item-2">Digital Logic Chapter 5 part 1 - Latches and Flip-flops</div></div><div class="info-2"><div class="info-item-1">Digital Logic Chapter 5 part 1 - Latches and Flip-flopsSequential CircuitsA sequential circuit consists of a combinational circuit to which storage elements are connected to form a feedback path.The binary information stored in the memory elements at any given time defines the state of the sequential circuits.$(inputs, current State)$ $\Longrightarrow$ $(outputs, next State)$, the behavior is specified by a time sequence of inputs and internal states. Synchronous Sequential CircuitsA system...</div></div></div></a></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/avatar.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">Kaixun Wang</div><div class="author-info-description">Just another blogger</div><div class="site-data"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">3</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">1</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://space.bilibili.com/356340269" target="_blank" title="bilibili"><i class="fab fa-bilibili" style="color: #4a7dbe;"></i></a><a class="social-icon" href="mailto:12310803@mail.sustech.edu.cn" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #4a7dbe;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Contents</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Digital-Logic-Chapter-5-part-2-Synchronous-Sequential-Logic"><span class="toc-number">1.</span> <span class="toc-text">Digital Logic Chapter 5 part 2 - Synchronous Sequential Logic</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Analysis-of-Sequential-Circuits"><span class="toc-number">1.1.</span> <span class="toc-text">Analysis of Sequential Circuits</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Ways-to-describe-a-digital-circuit"><span class="toc-number">1.1.1.</span> <span class="toc-text">Ways to describe a digital circuit</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Analysis-Procedure-of-Clocked-Sequential-Circuits"><span class="toc-number">1.1.2.</span> <span class="toc-text">Analysis Procedure of Clocked Sequential Circuits</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Steps"><span class="toc-number">1.1.2.1.</span> <span class="toc-text">Steps:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Example-1-using-DFF-Q-t-1-D-t"><span class="toc-number">1.1.2.2.</span> <span class="toc-text">Example 1 using DFF $Q(t+1) &#x3D; D(t)$:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Example-2-using-JKFF-Q-t-1-J-t-Q-t-%E2%80%99-K-t-%E2%80%99Q-t"><span class="toc-number">1.1.2.3.</span> <span class="toc-text">Example 2 using JKFF $Q(t+1) &#x3D; J(t)Q(t)’ + K(t)’Q(t)$:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Example-3-using-TFF-Q-t-1-T-t-%E2%80%99Q-t-T-t-Q-t-%E2%80%99"><span class="toc-number">1.1.2.4.</span> <span class="toc-text">Example 3 using TFF $Q(t+1) &#x3D; T(t)’Q(t) + T(t)Q(t)’$:</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Finite-State-Machine"><span class="toc-number">1.2.</span> <span class="toc-text">Finite State Machine</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#State-Minimization-Encoding"><span class="toc-number">1.3.</span> <span class="toc-text">State Minimization &amp; Encoding</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#State-minimization"><span class="toc-number">1.3.1.</span> <span class="toc-text">State minimization</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Encoding-assign-binary-state-to-the-states"><span class="toc-number">1.3.2.</span> <span class="toc-text">Encoding(assign binary state to the states)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Design-of-Sequential-Circuits"><span class="toc-number">1.4.</span> <span class="toc-text">Design of Sequential Circuits</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Design-Procedure-of-Sequential-Circuits"><span class="toc-number">1.4.1.</span> <span class="toc-text">Design Procedure of Sequential Circuits</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Choice-of-Memory-Elements"><span class="toc-number">1.4.2.</span> <span class="toc-text">Choice of Memory Elements</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#FF%E2%80%99s-Excitation-Table"><span class="toc-number">1.4.3.</span> <span class="toc-text">FF’s Excitation Table</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Design-Example-Design-with-DFF-A-Sequence-Detector"><span class="toc-number">1.4.4.</span> <span class="toc-text">Design Example: Design with DFF: A Sequence Detector</span></a></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Posts</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/11/23/Digital%20Logic%20Chapter%205%20part%202:Synchronous%20Sequential%20Logic/" title="Digital Logic Chapter 5 part 2 - Synchronous Sequential Logic">Digital Logic Chapter 5 part 2 - Synchronous Sequential Logic</a><time datetime="2024-11-23T13:22:05.000Z" title="Created 2024-11-23 21:22:05">2024-11-23</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/11/22/Digital%20Logic%20Chapter%205%20part1:Latches%20and%20Flip-flops/" title="Digital Logic Chapter 5 part 1 - Latches and Flip-flops">Digital Logic Chapter 5 part 1 - Latches and Flip-flops</a><time datetime="2024-11-21T16:59:14.000Z" title="Created 2024-11-22 00:59:14">2024-11-22</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/11/21/FirstPost/" title="FirstPost">FirstPost</a><time datetime="2024-11-21T07:52:44.000Z" title="Created 2024-11-21 15:52:44">2024-11-21</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2019 - 2024 By Kaixun Wang</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Reading Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Toggle Between Light and Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle Between Single-column and Double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="Settings"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table of Contents"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="Back to Top"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><script>(() => {
+  const loadMathjax = () => {
+    if (!window.MathJax) {
+      window.MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']],
+          tags: 'ams',
+        },
+        chtml: {
+          scale: 1.1
+        },
+        options: {
+          enableMenu: true,
+          renderActions: {
+            findScript: [10, doc => {
+              for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+                const display = !!node.type.match(/; *mode=display/)
+                const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+                const text = document.createTextNode('')
+                node.parentNode.replaceChild(text, node)
+                math.start = {node: text, delim: '', n: 0}
+                math.end = {node: text, delim: '', n: 0}
+                doc.math.push(math)
+              }
+            }, '']
+          }
+        }
+      }
+      
+      const script = document.createElement('script')
+      script.src = 'https://cdn.jsdelivr.net/npm/mathjax/es5/tex-mml-chtml.min.js'
+      script.id = 'MathJax-script'
+      script.async = true
+      document.head.appendChild(script)
+    } else {
+      MathJax.startup.document.state(0)
+      MathJax.texReset()
+      MathJax.typesetPromise()
+    }
+  }
+
+  btf.addGlobalFn('encrypt', loadMathjax, 'mathjax')
+  window.pjax ? loadMathjax() : window.addEventListener('load', loadMathjax)
+})()</script></div><script id="canvas_nest" defer="defer" color="0,0,255" opacity="0.7" zIndex="-1" count="99" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-nest.min.js"></script><script id="click-show-text" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/click-show-text.min.js" data-mobile="false" data-text="Have,a,Nice,Day" data-fontsize="15px" data-random="true" async="async"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">Search</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  Loading Database</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="Search for Posts" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div></body></html>
