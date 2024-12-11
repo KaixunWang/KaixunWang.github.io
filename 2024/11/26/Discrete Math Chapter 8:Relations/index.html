@@ -1,0 +1,469 @@
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>Discrete Math Chapter 8 - Relations | Kaixun's Blog</title><meta name="author" content="Kaixun Wang"><meta name="copyright" content="Kaixun Wang"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="Relations">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Discrete Math Chapter 8 - Relations">
+<meta property="og:url" content="http://www.kaixun.online/2024/11/26/Discrete%20Math%20Chapter%208:Relations/index.html">
+<meta property="og:site_name" content="Kaixun&#39;s Blog">
+<meta property="og:description" content="Relations">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/KaixunWang/pic_bed/img/IMG_E221A630AF2C-1.jpeg">
+<meta property="article:published_time" content="2024-11-25T17:04:06.000Z">
+<meta property="article:modified_time" content="2024-12-11T02:17:28.873Z">
+<meta property="article:author" content="Kaixun Wang">
+<meta property="article:tag" content="Discrete Math">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/KaixunWang/pic_bed/img/IMG_E221A630AF2C-1.jpeg"><link rel="shortcut icon" href="/img/avatar.png"><link rel="canonical" href="http://www.kaixun.online/2024/11/26/Discrete%20Math%20Chapter%208:Relations/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"No results found for: ${query}","hits_stats":"${hits} articles found"}},
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":230,"highlightFullpage":false,"highlightMacStyle":true},
+  copy: {
+    success: 'Copy Successful',
+    error: 'Copy Failed',
+    noSupport: 'Browser Not Supported'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: 'Just now',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: 'Load More'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Discrete Math Chapter 8 - Relations',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  isShuoshuo: false
+}</script><span id="fps"></span><link rel="stylesheet" href="/css/custom.css" media="defer" onload="this.media='all'"><!-- hexo injector head_end start --><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiper.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiperstyle.css" media="print" onload="this.media='all'"><!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">Loading...</div></div></div><script>(()=>{
+  const $loadingBox = document.getElementById('loading-box')
+  const $body = document.body
+  const preloader = {
+    endLoading: () => {
+      $body.style.overflow = ''
+      $loadingBox.classList.add('loaded')
+    },
+    initLoading: () => {
+      $body.style.overflow = 'hidden'
+      $loadingBox.classList.remove('loaded')
+    }
+  }
+
+  preloader.initLoading()
+  window.addEventListener('load', preloader.endLoading)
+
+  if (false) {
+    btf.addGlobalFn('pjaxSend', preloader.initLoading, 'preloader_init')
+    btf.addGlobalFn('pjaxComplete', preloader.endLoading, 'preloader_end')
+  }
+})()</script><div id="web_bg" style="background-image: url(/img/favicon.jpg);"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/avatar.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">7</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">4</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">3</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archive</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(https://cdn.jsdelivr.net/gh/KaixunWang/pic_bed/img/IMG_E221A630AF2C-1.jpeg);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">Kaixun's Blog</span></a><a class="nav-page-title" href="/"><span class="site-name">Discrete Math Chapter 8 - Relations</span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> Search</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archive</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">Discrete Math Chapter 8 - Relations</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2024-11-25T17:04:06.000Z" title="Created 2024-11-26 01:04:06">2024-11-26</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2024-12-11T02:17:28.873Z" title="Updated 2024-12-11 10:17:28">2024-12-11</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Discrete-Math/">Discrete Math</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post Views:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><h1 id="Discrete-Math-Chapter-8-Relations"><a href="#Discrete-Math-Chapter-8-Relations" class="headerlink" title="Discrete Math Chapter 8 - Relations"></a>Discrete Math Chapter 8 - Relations</h1><h2 id="Relations-and-Their-Properties"><a href="#Relations-and-Their-Properties" class="headerlink" title="Relations and Their Properties"></a>Relations and Their Properties</h2><h3 id="Binary-Relations"><a href="#Binary-Relations" class="headerlink" title="Binary Relations"></a>Binary Relations</h3><p>Definition: Let A, B be two sets. A binary relation R from A to B is a subset of the Cartesian product $A × B$.</p>
+<p>By definition, a binary relation $R ⊆ A × B$ is a set of ordered pairs of the form $(a, b)$ with $a ∈ A$ and $b ∈ B$.</p>
+<p>We use a R b to denote $(a, b) ∈ R$, and $a \not R b$ to denote $(a, b) ∉ R$.</p>
+<h3 id="Binary-Relations-vs-Functions"><a href="#Binary-Relations-vs-Functions" class="headerlink" title="Binary Relations vs Functions"></a>Binary Relations vs Functions</h3><p>Functions can also be visualized as graphs, but they map each element in the domain to exactly one element in the codomain.</p>
+<p>Binary relations are able to represent one-to-many relationships between elements in A and B.</p>
+<p>Binary relations can be viewed as <strong>generalization</strong> of functions.</p>
+<h3 id="Relations-between-Finite-Sets"><a href="#Relations-between-Finite-Sets" class="headerlink" title="Relations between Finite Sets"></a>Relations between Finite Sets</h3><p>Theorem: There are $2^{nm}$ binary relations from an n-element set A to an m-element set B. </p>
+<p>Proof:</p>
+<p>The cardinality of the Cartesian product $|A × B| = nm$.</p>
+<p>R is a binary relation from A to B if and only if $R ⊆ A × B$.</p>
+<p>The number of subsets of a set with nm elements is $2^{nm}$.</p>
+<p>Matrix representation:</p>
+<p>A relation R between finite sets can be represented using a zero–one matrix $M_R$.</p>
+<script type="math/tex; mode=display">
+\left(
+\begin{matrix} \notag
+0&1&0&0&0\\
+1&0&1&1&0\\
+1&0&1&0&1
+\end{matrix}
+\right)</script><h3 id="Representing-Binary-Relations"><a href="#Representing-Binary-Relations" class="headerlink" title="Representing Binary Relations"></a>Representing Binary Relations</h3><p>We can visually represent a binary relation R:</p>
+<p>as a directed graph: if $a R b$, then draw an arrow from a to b: $a → b$</p>
+<p>as a table (matrix): if $a R b$, then mark the table cell at $(a, b)$</p>
+<h3 id="Relations-on-One-Set"><a href="#Relations-on-One-Set" class="headerlink" title="Relations on One Set"></a>Relations on One Set</h3><p>Definition: A relation on a set A is a relation from A to A.</p>
+<h3 id="Properties-of-Relations"><a href="#Properties-of-Relations" class="headerlink" title="Properties of Relations"></a>Properties of Relations</h3><h4 id="Reflexive-Relation-自反"><a href="#Reflexive-Relation-自反" class="headerlink" title="Reflexive Relation(自反):"></a>Reflexive Relation(自反):</h4><p>A relation R on a set A is called reflexive if $(a, a) ∈ R$ for every element $a ∈ A$.</p>
+<p>A relation R is reflexive if and only if $M_R$ has 1 in every position on its main diagonal.</p>
+<h4 id="Irreflexive-Relation-完全非自反"><a href="#Irreflexive-Relation-完全非自反" class="headerlink" title="Irreflexive Relation(完全非自反):"></a>Irreflexive Relation(完全非自反):</h4><p>A relation R on a set A is called irreflexive if $(a, a) ∉ R$ for every element $a ∈ A$.</p>
+<p>A relation R is irreflexive if and only if $M_R$ has 0 in every position on its main diagonal.</p>
+<h4 id="Symmetric-Relation-对称"><a href="#Symmetric-Relation-对称" class="headerlink" title="Symmetric Relation(对称):"></a>Symmetric Relation(对称):</h4><p>A relation R on a set A is called symmetric if $(b, a) ∈ R$ whenever $(a, b) ∈ R$ for all $a, b ∈ A$.</p>
+<p>A relation R is symmetric if and only if $M_R$ is symmetric.</p>
+<h4 id="Antisymmetric-Relation-完全非对称"><a href="#Antisymmetric-Relation-完全非对称" class="headerlink" title="Antisymmetric Relation(完全非对称):"></a>Antisymmetric Relation(完全非对称):</h4><p>A relation R on a set A is called antisymmetric if $(b, a) ∈ R$, $(a, b) ∈ R$ implies $a = b$ for all $a, b ∈ A$.</p>
+<p>A relation R is antisymmetric if and only if $m<em>{ij} = 1$ implies $m</em>{ji} = 0$ for $i ≠ j$, where $m_{ij}$ is the (i, j)-th element of $M_R$.</p>
+<p><img src="../../../Desktop/截屏2024-12-07 12.41.48.png" alt="截屏2024-12-07 12.41.48" style="zoom:40%;" /></p>
+<h4 id="Transitive-Relation-传递性"><a href="#Transitive-Relation-传递性" class="headerlink" title="Transitive Relation(传递性):"></a>Transitive Relation(传递性):</h4><p>Transitive Relation: A relation R on a set A is called transitive if $(a, b) ∈ R$, $(b, c) ∈ R$ implies $(a, c) ∈ R$ for all $a, b, c ∈ A$</p>
+<h3 id="Combining-Relations"><a href="#Combining-Relations" class="headerlink" title="Combining Relations"></a>Combining Relations</h3><p>Since relations are sets, we can combine relations via set operations: union, intersection, complement, difference, etc. • typically both relations are defined on the same sets</p>
+<h4 id="Composite-of-Relations"><a href="#Composite-of-Relations" class="headerlink" title="Composite of Relations"></a>Composite of Relations</h4><p>Definition: Let R be a relation from a set A to a set B and S be a relation from B to C. The composite of R and S is the relation consisting of the ordered pairs $(a, c)$ where $a ∈ A$ and $c ∈ C$ and for which there exists a $b ∈ B$ such that $(a, b) ∈ R$ and $(b, c) ∈ S$.</p>
+<p>We denote the composite of R and S by $S ◦ R$. (先操作的放后面，与函数一致) </p>
+<p><img src="../../../Desktop/截屏2024-12-08 00.44.35.png" alt="截屏2024-12-08 00.44.35" style="zoom:33%;" /></p>
+<p>Example : (as a matrix)</p>
+<p>$A = {1, 2}, B = {1, 2, 3}, C = {a, b}$</p>
+<p>$R = {(1, 2), (1, 3), (2, 1)} ⊆ A × B, S = {(1, a), (3, a), (3, b)} ⊆ B × C$</p>
+<p>$S ◦ R = {(1, a), (1, b), (2, a)} $</p>
+<script type="math/tex; mode=display">M_R=\left(
+\begin{matrix} \notag
+0&1&1\\
+1&0&0
+\end{matrix}
+\right)</script><script type="math/tex; mode=display">M_S=\left(
+\begin{matrix} \notag
+1&0\\
+0&0\\
+1&1\end{matrix}
+\right)</script><script type="math/tex; mode=display">M_R ⊙ M_S = \left(
+\begin{matrix} \notag
+1&1\\
+1&0\end{matrix}
+\right)</script><p>Boolean product ⊙ of matrices: replace + with ∨ and × with ∧</p>
+<h4 id="Composing-a-Relation-with-Itself"><a href="#Composing-a-Relation-with-Itself" class="headerlink" title="Composing a Relation with Itself"></a>Composing a Relation with Itself</h4><p>Definition: Let R be a relation on a set A. The powers $R^n$ for $n = 1, 2, 3, …$ is defined <strong>inductively</strong> by $R^1 = R$ and $R^{n+1} = R^n ◦ R$. </p>
+<p>Example: Let A = {1, 2, 3, 4} and R = {(1, 2), (2, 3), (2, 4), (3, 3)}</p>
+<script type="math/tex; mode=display">R^1 = R</script><script type="math/tex; mode=display">R^2 = R ◦ R = {(1, 3), (1, 4), (2, 3), (3, 3)}</script><script type="math/tex; mode=display">R^3 = R^2 ◦ R = {(1, 3), (2, 3), (3, 3)}</script><script type="math/tex; mode=display">R^4 = R^3 ◦ R = {(1, 3), (2, 3), (3, 3)}</script><script type="math/tex; mode=display">R^k = R^4 = …</script><h4 id="Transitive-Relation-and-R-n"><a href="#Transitive-Relation-and-R-n" class="headerlink" title="Transitive Relation and $R^n$"></a>Transitive Relation and $R^n$</h4><p>Theorem: The relation R on a set A is transitive <strong>if and only if</strong></p>
+<script type="math/tex; mode=display">R^n ⊆ R\ for\ n = 1, 2, 3, …</script><p>Note that Rn can be computed by Boolean product of matrices:</p>
+<script type="math/tex; mode=display">M_{R^n} = M_R ⊙ M_R ⊙ ··· ⊙ M_R</script><h2 id="N-ary-Relations-and-Databases"><a href="#N-ary-Relations-and-Databases" class="headerlink" title="N-ary Relations and Databases"></a>N-ary Relations and Databases</h2><h3 id="N-ary-Relations"><a href="#N-ary-Relations" class="headerlink" title="N-ary Relations"></a>N-ary Relations</h3><p>Definition: An n-ary relation R on sets $A_1, A_2, …, A_n$, written as $R : A_1, …, A_n$, is a subset of $A_1 × ··· × A_n$ (Cartisian product of n elements).</p>
+<p>The sets Ai s are called the domains of R. </p>
+<p>The degree of R is n. </p>
+<p>R is <strong>functional</strong> in domain Ai if for any ai ∈ Ai the relation R contains at most one n-tuple of the form $(···, a_i, ···)$. * R can be indexed by $a_i$</p>
+<p>Some ways to represent n-ary relations:</p>
+<p>as an explicit list or table of its tuples</p>
+<p>as a function from the domains to ${T, F}$</p>
+<h3 id="Relational-Databases"><a href="#Relational-Databases" class="headerlink" title="Relational Databases"></a>Relational Databases</h3><p>A relational database is essentially an n-ary relation R.</p>
+<p>A domain $A_i$ is a <strong>primary key</strong> for the database if the relation R is functional in $A_i$. * because R can be indexed by $a_i$</p>
+<p>A composite key for the relational database is a set of domains ${···, Ai, ···, Aj, ···}$ such that R contains at most one n-tuple of the form $(···, a_i, ···, a_j, ···)$ for each composite value $(a_i, a_j) ∈ A_i × A_j$ .</p>
+<p>R can be indexed by $(a_i, a_j)$</p>
+<h3 id="Operations-on-Databases"><a href="#Operations-on-Databases" class="headerlink" title="Operations on Databases"></a>Operations on Databases</h3><h4 id="Selection-Operators"><a href="#Selection-Operators" class="headerlink" title="Selection Operators"></a>Selection Operators</h4><p>Let A be an n-ary domain $A = A_1 × ··· × A_n$, and let $C : A → {T, F}$ be any condition (predicate) on elements (n-tuples) of A. </p>
+<p>The selection operator $s_C$ is the operator that maps any n-ary relation R on A to the n-ary relation consisting of all n-tuples from R that satisfy C. * note that sC(A) is also an n-ary relation</p>
+<script type="math/tex; mode=display">∀R ⊆ A, s_C(R) = R ∩ \{a ∈ A | C(a) = T\} = \{a ∈ R | C(a) = T\}</script><p><strong>Example</strong>: Consider $A = StudentName\ ×\ Standing\ ×\ SIDs$</p>
+<p>Condition $UpperLevel(name,\ standing,\ sid)$ is defined as $(standing\ =\ junior )\ ∨\ (standing\ =\ senior)$</p>
+<p>Then, sUpperLevel is the selection operator that takes any relation R on A (database of all students) and produces a relation $R’ ⊆ R$ consisting of just the upper-level students (juniors or seniors).</p>
+<h4 id="Projection-Operators"><a href="#Projection-Operators" class="headerlink" title="Projection Operators"></a>Projection Operators</h4><p>Let A be an n-ary domain $A = A_1 × ··· × A_n$, and let ${i_1, …, i_m}$ be a sequence of indices such that $1 ≤ i_1 &lt; ··· &lt; i_m ≤ n$ and $m &lt; n$.</p>
+<p>The projection operator $P{i<em>1, …, i_m} : A → A</em>{i<em>1} × ··· × A</em>{i_m}$ is the operator that maps any n-ary relation R on A to the m-ary relation consisting of m-tuples specified by indices</p>
+<script type="math/tex; mode=display">{i_1, …, i_m}: P{i_1, …, i_m } (a_1, …, a_n) = (a_{i_1} , …, a_{i_m} )</script><p>Example: Consider $Cars = Model × Year × Color$</p>
+<p>Index sequence is {1, 3}.</p>
+<p>The projection operator $P${1, 3} simply maps each 3-tuple, e.g., $(a1, a2, a3) = (Tesla, 2020, black)$ to $(a1, a3) = (Tesla, black)$.</p>
+<p>This operator can be applied to any relation $R ⊆ Cars$ to obtain a list of model-color combinations available.</p>
+<h4 id="Join-Operators"><a href="#Join-Operators" class="headerlink" title="Join Operators"></a>Join Operators</h4><p>The join operator puts two relations together to form a sort of combined relation.</p>
+<p>If the tuple $(a, b)$ appears in $R_1 ⊆ A × B$, and the tuple $(b, c)$ appears in $R_2 ⊆ B × C$, then the tuple $(a, b, c)$ appears in their join $J(R_1, R_2)$.</p>
+<p>In general, A, B, C can each be the Cartesian product of multiple domains rather than a single domain.</p>
+<p>Example: Let relation $R_1$ be a teaching assignment table, relating Professors to Courses.</p>
+<p>Let relation $R_2$ be a classroom assignment table, relating Courses to Rooms and Times.</p>
+<p>Then, the relation $J(R_1, R_2)$ is like your class schedule, listing tuples of the form (professor, course, room, time).</p>
+<h2 id="Closures-of-Relations-闭包"><a href="#Closures-of-Relations-闭包" class="headerlink" title="Closures of Relations(闭包)"></a>Closures of Relations(闭包)</h2><p>Definition: Let R be a relation on a set A. A relation S on A with property P is called the closure of R with respect to P if S is the minimal set containing R satisfying the property P.</p>
+<p>Minimal S: for every relation Q ⊇ R that satisfies P, we have S ⊆ Q.</p>
+<h3 id="Reflexive-Closures"><a href="#Reflexive-Closures" class="headerlink" title="Reflexive Closures"></a>Reflexive Closures</h3><p>Consider R = {(1, 1), (1, 2), (2, 1), (3, 2)} defined on A = {1, 2, 3}. </p>
+<p>Q: Is relation R reflexive?</p>
+<p>No, (2, 2) and (3, 3) are not in R What is the minimal re lation S ⊇ R that is reflexive?</p>
+<p>How to make R reflexive by adding minimum number of pairs?</p>
+<p>Add (2, 2) and (3, 3): S = {(1, 1), (1, 2), (2, 1), (3, 2), (2, 2), (3, 3)} ⊇ R is reflexive.</p>
+<h3 id="Symmetric-Closures"><a href="#Symmetric-Closures" class="headerlink" title="Symmetric Closures"></a>Symmetric Closures</h3><p>symmetric closure: relation R = {(1, 2), (1, 3), (2, 2)} on A = {1, 2, 3}</p>
+<p>how to make it symmetric?</p>
+<p>S = {(1, 2), (1, 3), (2, 2)} ∪ {(2, 1), (3, 1)}</p>
+<p>General solution:</p>
+<script type="math/tex; mode=display">R \cup R^{-1}</script><h3 id="Paths-and-Transitive-Closures"><a href="#Paths-and-Transitive-Closures" class="headerlink" title="Paths and Transitive Closures"></a>Paths and Transitive Closures</h3><p>Definition: A (directed) path from a to b in a directed graph G is a sequence of edges $(x0, x1), (x1, x2), …, (xn−1, xn)$ in graph G, where $n ≥ 0, x_0 = a$ and $x_n = b$.</p>
+<p>Recall that we can represent a relation using a directed graph. </p>
+<p>Then, finding a <strong>transitive closure</strong> corresponds to finding B of elements that are connected with a directed path.</p>
+<p>Example: Relation R = {(1, 2), (2, 2), (2, 3)} on A = {1, 2, 3}</p>
+<p>The transitive closure of R is S = {(1, 2), (2, 2), (2, 3), (1, 3)}</p>
+<p><img src="../../../Desktop/截屏2024-12-08 02.45.22.png" alt="截屏2024-12-08 02.45.22" style="zoom:50%;" /></p>
+<h4 id="Paths-and-Powers-of-a-Relation"><a href="#Paths-and-Powers-of-a-Relation" class="headerlink" title="Paths and Powers of a Relation"></a>Paths and Powers of a Relation</h4><p>Theorem: Let R be relation on a set A. There is a path of length n from a to b in R (as a directed graph) if and only if $(a, b) ∈ R_n$.</p>
+<h4 id="The-Connectivity-Relation-R"><a href="#The-Connectivity-Relation-R" class="headerlink" title="The Connectivity Relation R*"></a>The Connectivity Relation R*</h4><p>Definition: R is a relation on a set A. The connectivity relation $R^∗$ consists of all pairs (a, b) such that there is a path (of any length) from a to b in R.</p>
+<script type="math/tex; mode=display">R^*=\cup^\infty_{k=1}R^k</script><p>Example: Relation R on A = {1, 2, 3, 4} shown in the figure below </p>
+<p><img src="../../../Desktop/截屏2024-12-08 15.36.40.png" alt="截屏2024-12-08 15.36.40" style="zoom:50%;" /></p>
+<p>$R$ = {(1, 2), (1, 4), (2, 3), (3, 4)}</p>
+<p>$R^2$ ={(1, 3), (2, 4)}</p>
+<p>$R^3$ ={(1, 4)}</p>
+<p>$R^4$ = ∅</p>
+<p>$R^∗$ = {(1, 2), (1, 3), (1, 4), (2, 3), (2, 4), (3, 4)}</p>
+<p>Theorem: The transitive closure of a relation $R$ equals the connectivity relation $R^∗$.</p>
+<h4 id="Finding-Transitive-Closures"><a href="#Finding-Transitive-Closures" class="headerlink" title="Finding Transitive Closures"></a>Finding Transitive Closures</h4><p>Recall that finding a transitive closure corresponds to finding the connectivity relation, which consists of all pairs of elements that are connected with a directed path.</p>
+<p>Lemma: Let A be a set with n elements and R be a relation on A. If there is a path in R from a to b, then there is such a path with length ≤ n. Moreover, when a ≠ b, if there is a path from a to b, then there is such a path with length ≤ n − 1. That is,</p>
+<script type="math/tex; mode=display">R^*=\cup^n_{k=1}R^k</script><p>Theorem: Let $M_R$ be the zero–one matrix of the relation R on a set with n elements. Then the zero–one matrix of the transitive closure R is</p>
+<script type="math/tex; mode=display">M_{R^*}=M_R \vee M_R^{[2]}\vee M_R^{[3]}\vee M_R^{[4]}\vee ...\vee M_R^{[n]}</script><script type="math/tex; mode=display">M_R^{[n]}=M_R ⊙M_R⊙...=M_{R^n}</script><h5 id="Naive-algorithm"><a href="#Naive-algorithm" class="headerlink" title="Naive algorithm"></a>Naive algorithm</h5><p><img src="../../../Desktop/截屏2024-12-08 18.02.11.png" alt="截屏2024-12-08 18.02.11" style="zoom:30%;" /></p>
+<h5 id="The-Floyd-Warshall-algorithm"><a href="#The-Floyd-Warshall-algorithm" class="headerlink" title="The Floyd-Warshall algorithm:"></a>The Floyd-Warshall algorithm:</h5><p>By definition, $R^∗$ consists of all pairs (a, b) such that there exists a path from a to b in the graph representation of R.</p>
+<p>This algorithm computes by iterating on k: in the k-th iteration, the intermediate nodes of all paths are from the first k nodes only.</p>
+<p><img src="../../../Desktop/截屏2024-12-09 00.36.33.png" alt="截屏2024-12-09 00.36.33" style="zoom:30%;" /></p>
+<h2 id="Equivalence-Relations"><a href="#Equivalence-Relations" class="headerlink" title="Equivalence Relations"></a>Equivalence Relations</h2><p>Definition: A relation R on a set S is called an equivalence relation if it is <strong>reflexive, symmetric, and transitive</strong>.</p>
+<h3 id="Equivalence-Classes"><a href="#Equivalence-Classes" class="headerlink" title="Equivalence Classes"></a>Equivalence Classes</h3><p>Definition: Let R be an equivalence relation on a set S. The set of all elements that are related to an element a of S is called the equivalence class of a, denoted by $[a]_R$. When only one relation is considered, we use the notation $[a]$.</p>
+<script type="math/tex; mode=display">[a]_R=\{b \in S:(a,b)\in R\}</script><p>Example: </p>
+<p>$R = {(a, b) : a ≡ b mod 3}$ on S = {0, 1, 2, 3, 4, 5, 6}</p>
+<p>[0] = [3] = [6] = {0, 3, 6}</p>
+<p>[1] = [4] = {1, 4}</p>
+<p>[2] = [5] = {2, 5}</p>
+<p>Find [a] for the following relations:</p>
+<p>“Strings a and b have the same length.”</p>
+<script type="math/tex; mode=display">[a] = the\ set\ of\ all\ strings\ of\ the\ same\ length\ as\ string\ a</script><p>“Integers a and b have the same absolute value.”</p>
+<script type="math/tex; mode=display">[a] = \{a, −a\}</script><p>“Real numbers a and b have the same fractional part: $a − b ∈ Z$.”</p>
+<script type="math/tex; mode=display">[a] = \{..., a − 2, a − 1, a, a + 1, a + 2, ...\}</script><p><strong>Theorem</strong>:</p>
+<p>Let R be an equivalence relation on a set S. The following statements are equivalent:</p>
+<p>(i) $a R b $</p>
+<p>(ii) $[a] = [b]$</p>
+<p>(iii) $[a] ∩ [b] ≠ ∅$</p>
+<h3 id="Partition-of-a-Set-S"><a href="#Partition-of-a-Set-S" class="headerlink" title="Partition of a Set S"></a>Partition of a Set S</h3><p>Definition: Let S be a set. A collection of nonempty subsets of S $A_1, A_2, …, A_k$ is called a partition of S if:</p>
+<p><img src="../../../Desktop/截屏2024-12-09 01.47.00.png" alt="截屏2024-12-09 01.47.00" style="zoom:30%;" /></p>
+<p>Theorem: Let R be an equivalence relation on a set S. Then the union of all the equivalence classes of R is S:</p>
+<script type="math/tex; mode=display">S=\cup_{a \in S}[a]_R</script><p>Theorem: The equivalence classes form a partition of S.</p>
+<p>Theorem: Let {A1, A2, …, Ai, …} be a partition of S. Then there is an equivalence relation R on S, which has the sets Ai as its equivalence classes.</p>
+<h2 id="Partial-Orderings"><a href="#Partial-Orderings" class="headerlink" title="Partial Orderings"></a>Partial Orderings</h2><p>Definition: A relation R on a set S is called a partial ordering, or partial order, if it is <strong>reflexive, antisymmetric, and transitive</strong>.</p>
+<p>A set S together with a partial ordering R is called a partially ordered set, or poset, denoted by (S, R) or simply (S, ≼) in general. Members of S are called elements of the poset.</p>
+<p>Notation: The notation $a ≺ b$ denotes that $a ≼ b$ but $a ≠ b$. Also, we say “a is less than b” or “b is greater than a” if $a ≺ b$</p>
+<h3 id="Comparability"><a href="#Comparability" class="headerlink" title="Comparability"></a>Comparability</h3><p>Definition: The elements a, b of a poset (S, ≼) are comparable if $a ≼ b$ or $b ≼ a$. Otherwise, a and b are called incomparable.</p>
+<p>If a, b has partial ordering relations, a,b and b, a are comparable.</p>
+<p><strong>Example</strong>: S = {1, 2, 3, 4, 5}, R denotes the “ | ” relation</p>
+<p>Is 2, 4 comparable? Yes</p>
+<p>Is 5, 5 comparable? Yes</p>
+<p>Is 3, 5 comparable? No, because neither of 3 | 5 and 5 | 3 holds</p>
+<h3 id="Total-Ordering"><a href="#Total-Ordering" class="headerlink" title="Total Ordering"></a>Total Ordering</h3><p>Definition: If (S, ≼) is a poset and every two elements of S are comparable, then ≼ is called a total order or linear order.</p>
+<p>S is called a totally ordered or linearly ordered set. A totally ordered set is also called a chain.</p>
+<p><strong>Example</strong>: Consider S = {1, 2, 3, 4, 5}</p>
+<p>Is (S , ≥) a totally (linearly) ordered set? Yes</p>
+<p>Is (S , | ) a totally (linearly) ordered set? No, because 3, 5 are not comparable</p>
+<h3 id="Cover"><a href="#Cover" class="headerlink" title="Cover"></a>Cover</h3><p>Definition: If (S, ≼) is a poset, $\forall x,y \in S$, $x\leq y, x\neq y$, there is no $x\leq z \leq y$</p>
+<p>y cover x, y is 前驱， x is 后继</p>
+<p>$Cover(A)={(x,y)|x,y \in A , y\ cover\ x}$</p>
+<p><strong>Example</strong>: Consider S={1,2,4,6}</p>
+<p>poset is (A,|)</p>
+<p>$Cover(A)= (1,2),(2,4),(2,6)$ without (1,4) because 1|2|4</p>
+<h3 id="Hasse-Diagram"><a href="#Hasse-Diagram" class="headerlink" title="Hasse Diagram"></a>Hasse Diagram</h3><p>cover图，无环，无第三边，无双边</p>
+<ol>
+<li>if $x\leq y$, then x under y</li>
+<li>if y covers x, connect x and y</li>
+</ol>
+<p>Reflexive, transitive</p>
+<p><img src="../../../Desktop/截屏2024-12-10 17.25.21.png" alt="截屏2024-12-10 17.25.21"></p>
+<h3 id="Maximal-and-Minimal-Elements-极大元，极小元"><a href="#Maximal-and-Minimal-Elements-极大元，极小元" class="headerlink" title="Maximal and Minimal Elements(极大元，极小元)"></a>Maximal and Minimal Elements(极大元，极小元)</h3><p>Definition: a is a maximal (resp. minimal) element in poset $(S, ≼)$ if there is no $b ∈ S$ such that $a ≺ b$ (resp. $b ≺ a$).</p>
+<p>Example: consider the poset ({2, 4, 5, 10, 12, 20, 25}, | )</p>
+<p>What are the maximal elements? 12, 20, 25</p>
+<p>What are the minimal elements? 2, 5</p>
+<p>极大元之间不可比</p>
+<h3 id="Greatest-and-Least-Elements-最大元，最小元"><a href="#Greatest-and-Least-Elements-最大元，最小元" class="headerlink" title="Greatest and Least Elements(最大元，最小元)"></a>Greatest and Least Elements(最大元，最小元)</h3><p>Definition: a is the greatest (resp. least) element of poset $(S, ≼)$ if  $b ≼ a$ (resp. $a ≼ b$) for all $b ∈ S$.</p>
+<p><img src="../../../Desktop/截屏2024-12-10 17.38.27.png" alt="截屏2024-12-10 17.38.27" style="zoom:50%;" /></p>
+<h3 id="Upper-and-Lower-Bounds"><a href="#Upper-and-Lower-Bounds" class="headerlink" title="Upper and Lower Bounds"></a>Upper and Lower Bounds</h3><p>Definition: Let A be a subset of a poset $(S, ≼)$.</p>
+<p>$u ∈ S$ is called an upper bound (resp. lower bound) of A if $a ≼ u$ (resp. $u ≼ a$) for all $a ∈ A$.</p>
+<p>$x ∈ S$ is called the least upper bound (resp. greatest lower bound) of A if x is an upper bound (resp. lower bound) that is less than any other upper bound (resp. lower bound) of A.</p>
+<p>Example: Find the greatest lower bound and the least upper bound of set {1, 2, 4, 5, 10}, if they exist, in the poset ( Z+ , | ).</p>
+<p>greatest lower bound(下确界): 1</p>
+<p>least upper bound(上确界): 20</p>
+<h3 id="Lattices"><a href="#Lattices" class="headerlink" title="Lattices"></a>Lattices</h3><p>Definition: A partially ordered set in which every pair of elements has both a least upper bound and a greatest lower bound is  called a lattice.</p>
+<p><img src="../../../Desktop/截屏2024-12-10 17.53.25.png" alt="截屏2024-12-10 17.53.25" style="zoom:50%;" /></p>
+<h3 id="Well-Ordered-Induction"><a href="#Well-Ordered-Induction" class="headerlink" title="Well-Ordered Induction"></a>Well-Ordered Induction</h3><p>Definition: $(S, ≼)$ is a well-ordered set if $≼$ is a total order and every nonempty subset of S has a least element.</p>
+<p>The principle of well-ordered induction: Suppose that S is a well-ordered set.</p>
+<p>To prove that $P(x)$ is true for all $x ∈ S$, we complete two steps:</p>
+<p>Basis step: prove $P(x_0)$ is true for the least element $x_0$ of S</p>
+<p>Inductive step: prove, for every $y ∈ S$, if $P(x)$ is true for all $x ∈ S$ with $x ≺ y$, then $P(y)$ is true.</p>
+<p>Proof by contradiction: consider the set {$x ∈ S : P(x)$ is false}.</p>
+<h3 id="Topological-Sorting"><a href="#Topological-Sorting" class="headerlink" title="Topological Sorting"></a>Topological Sorting</h3><p>Given a partial ordering R, a total ordering ≼ is said to be compatible with R if a ≼ b whenever a R b. </p>
+<p>Topological sorting: construct a compatible total ordering from  a partial ordering.</p>
+<p>Theorem: Every finite nonempty poset $(S, ≼)$ has at least one  minimal element.</p>
+<p><img src="../../../Desktop/截屏2024-12-11 10.17.08.png" alt="截屏2024-12-11 10.17.08" style="zoom:33%;" /></p>
+<h2 id="Exercise"><a href="#Exercise" class="headerlink" title="Exercise"></a>Exercise</h2><h3 id="1-Let-A-a-b-c-and-B-1-2-3"><a href="#1-Let-A-a-b-c-and-B-1-2-3" class="headerlink" title="1. Let $A = $ {a, b, c} and $B = $ {1, 2, 3}"></a>1. Let $A = $ {a, b, c} and $B = $ {1, 2, 3}</h3><p>Is $R = {(a, 1), (b, 2), (c, 2)}$ a relation from A to B?</p>
+<p>Yes</p>
+<p>Is $Q = {(1, a), (2, b)}$ a relation from A to B?</p>
+<p>No, it’s a relation from B to A</p>
+<p>Is $P = {(a, a), (b, c), (b, a)}$ a relation from A to A?</p>
+<p>Yes</p>
+<h3 id="2-Consider-relations-on-A-1-2-3-4"><a href="#2-Consider-relations-on-A-1-2-3-4" class="headerlink" title="2. Consider relations on A = {1, 2, 3, 4}"></a>2. Consider relations on A = {1, 2, 3, 4}</h3><p>Is $R_{div} = {(a, b) : a | b}$ transitive?</p>
+<p>Yes, because if $a | b$ and $b | c$ then $a | c$</p>
+<p>Is $R_≠ = {(a, b) : a ≠ b}$ transitive?</p>
+<p>No, because $(1, 2), (2, 1) ∈ R<em>≠$ but $(1, 1) ∉ R</em>≠$</p>
+<p>Is $R = {(1, 2), (2, 2), (3, 3)}$ transitive?</p>
+<p>Yes</p>
+<h3 id="3-Consider-binary-relations-on-a-finite-set-A-with-A-n"><a href="#3-Consider-binary-relations-on-a-finite-set-A-with-A-n" class="headerlink" title="3. Consider binary relations on a finite set A with |A| = n:"></a>3. Consider binary relations on a finite set A with |A| = n:</h3><p>Hint: think of a binary relation as a zero-one matrix</p>
+<p>How many reflexive relations?</p>
+<script type="math/tex; mode=display">2^{n^2-n}</script><p>How many irreflexive relations?</p>
+<script type="math/tex; mode=display">2^{n^2-n}</script><p>How many symmetric relations?</p>
+<script type="math/tex; mode=display">2^{(n^2+n)/2}</script><p>How many antisymmetric relations?</p>
+<script type="math/tex; mode=display">2^n \cdot 3^{(n^2-n)/2}</script><p>Diagonal has $n$ possible cases, either 0/1; each slot beside diagonal elements can be either$(0,0),(0,1)$ or $(1,1)$</p>
+<h3 id="4-Prove-that-“If-R-is-transitive-then-Rn-is-also-transitive-”"><a href="#4-Prove-that-“If-R-is-transitive-then-Rn-is-also-transitive-”" class="headerlink" title="4. Prove that “If R is transitive, then Rn is also transitive.”"></a>4. Prove that “If R is transitive, then Rn is also transitive.”</h3><p>Let $P(n)$ be the theorem statement</p>
+<p>Basic step: $n=1$ : The statement is trivially true.</p>
+<p>Inductive step: Assume $P(k)$ is true for an arbitrary integer $k \geq 1$, we need to show that $P(k + 1)$ is true. By the previous Theorem, $P(k + 1)$ means: for any path $p(a, b)$ of length k + 1 from a to b and any path $p(b, c)$ of length k + 1 from b to c, our goal is to find a path $p(a, c)$ from a to c of length k + 1.</p>
+<p>Let $p(a, b) = (a, x) + (x, y) + p(y, b)$, then $p(y, b)$ is of length k – 1 ≥ 0. Since R is transitive, $(a, x), (x, y) ∈ R$ implies that $(a, y) ∈ R$. So, $(a, y) + p(y, b)$ is a path from a to b of length 1 + k – 1 = k. </p>
+<p>Let $p(b, c) = p(b, z) + (z, c)$, then $p(b, z)$ is also of length k. By the inductive hypothesis, we can find a path $p(a, z)$ from a to z of length k. So, $p(a, z) + (z, c)$ is a path from a to c of length k + 1.</p>
+<h3 id="5-For-the-relation-R-shown-in-the-figure-find-the-Floyd-Warshall-matrices-W-1-W-2-W-3-W-4"><a href="#5-For-the-relation-R-shown-in-the-figure-find-the-Floyd-Warshall-matrices-W-1-W-2-W-3-W-4" class="headerlink" title="5. For the relation R shown in the figure, find the Floyd-Warshall matrices $W_1, W_2, W_3, W_4$."></a>5. For the relation R shown in the figure, find the Floyd-Warshall matrices $W_1, W_2, W_3, W_4$.</h3><p>(Here $W_k$ is the matrix after the k-th iteration and $W_4$ is the transitive closure of R.)</p>
+<p><img src="../../../Desktop/截屏2024-12-09 00.38.32.png" alt="截屏2024-12-09 00.38.32" style="zoom:45%;" /></p>
+<p><img src="../../../Desktop/截屏2024-12-09 01.07.30.png" alt="截屏2024-12-09 01.07.30" style="zoom:40%;" /></p>
+<h3 id="6-Are-the-following-relations-equivalence-relations"><a href="#6-Are-the-following-relations-equivalence-relations" class="headerlink" title="6. Are the following relations equivalence relations?"></a>6. Are the following relations equivalence relations?</h3><p>“Integers a and b have the same absolute value.” Yes</p>
+<p>“The relation ≥ between real numbers.” No, not symmetric</p>
+<p>“Real numbers a and b have the same fractional part: $a − b ∈ Z$.” Yes</p>
+<p>“Natural numbers have a common factor &gt; 1.” No, not reflexive, e.g., (1, 1) ∉ R</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>Author: </span><span class="post-copyright-info"><a href="http://www.kaixun.online">Kaixun Wang</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>Link: </span><span class="post-copyright-info"><a href="http://www.kaixun.online/2024/11/26/Discrete%20Math%20Chapter%208:Relations/">http://www.kaixun.online/2024/11/26/Discrete%20Math%20Chapter%208:Relations/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>Copyright Notice: </span><span class="post-copyright-info">All articles on this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless otherwise stated.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Discrete-Math/">Discrete Math</a></div><div class="post-share"><div class="social-share" data-image="https://cdn.jsdelivr.net/gh/KaixunWang/pic_bed/img/IMG_E221A630AF2C-1.jpeg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related" href="/2024/11/26/Discrete%20Math%20Chapter%207:Counting/" title="Discrete Math Chapter 7 - Counting"><img class="cover" src="https://cdn.jsdelivr.net/gh/KaixunWang/pic_bed/img/IMG_E221A630AF2C-1.jpeg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="info"><div class="info-1"><div class="info-item-1">Previous</div><div class="info-item-2">Discrete Math Chapter 7 - Counting</div></div><div class="info-2"><div class="info-item-1">Counting</div></div></div></a><a class="pagination-related" href="/2024/11/24/Discrete%20Math%20Chapter%206:Induction%20and%20Recursion/" title="Discrete Math Chapter 6 - Induction and Recursion"><img class="cover" src="https://cdn.jsdelivr.net/gh/KaixunWang/pic_bed/img/IMG_E221A630AF2C-1.jpeg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="info text-right"><div class="info-1"><div class="info-item-1">Next</div><div class="info-item-2">Discrete Math Chapter 6 - Induction and Recursion</div></div><div class="info-2"><div class="info-item-1">Induction and Recursion</div></div></div></a></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>Related Articles</span></div><div class="relatedPosts-list"><a class="pagination-related" href="/2024/11/24/Discrete%20Math%20Chapter%206:Induction%20and%20Recursion/" title="Discrete Math Chapter 6 - Induction and Recursion"><img class="cover" src="https://cdn.jsdelivr.net/gh/KaixunWang/pic_bed/img/IMG_E221A630AF2C-1.jpeg" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2024-11-24</div><div class="info-item-2">Discrete Math Chapter 6 - Induction and Recursion</div></div><div class="info-2"><div class="info-item-1">Induction and Recursion</div></div></div></a><a class="pagination-related" href="/2024/11/26/Discrete%20Math%20Chapter%207:Counting/" title="Discrete Math Chapter 7 - Counting"><img class="cover" src="https://cdn.jsdelivr.net/gh/KaixunWang/pic_bed/img/IMG_E221A630AF2C-1.jpeg" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2024-11-26</div><div class="info-item-2">Discrete Math Chapter 7 - Counting</div></div><div class="info-2"><div class="info-item-1">Counting</div></div></div></a></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/avatar.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">Kaixun Wang</div><div class="author-info-description">Just another blogger</div><div class="site-data"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">7</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">4</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">3</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://space.bilibili.com/356340269" target="_blank" title="bilibili"><i class="fab fa-bilibili" style="color: #4a7dbe;"></i></a><a class="social-icon" href="mailto:12310803@mail.sustech.edu.cn" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #4a7dbe;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Contents</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Discrete-Math-Chapter-8-Relations"><span class="toc-number">1.</span> <span class="toc-text">Discrete Math Chapter 8 - Relations</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Relations-and-Their-Properties"><span class="toc-number">1.1.</span> <span class="toc-text">Relations and Their Properties</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Binary-Relations"><span class="toc-number">1.1.1.</span> <span class="toc-text">Binary Relations</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Binary-Relations-vs-Functions"><span class="toc-number">1.1.2.</span> <span class="toc-text">Binary Relations vs Functions</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Relations-between-Finite-Sets"><span class="toc-number">1.1.3.</span> <span class="toc-text">Relations between Finite Sets</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Representing-Binary-Relations"><span class="toc-number">1.1.4.</span> <span class="toc-text">Representing Binary Relations</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Relations-on-One-Set"><span class="toc-number">1.1.5.</span> <span class="toc-text">Relations on One Set</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Properties-of-Relations"><span class="toc-number">1.1.6.</span> <span class="toc-text">Properties of Relations</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Reflexive-Relation-%E8%87%AA%E5%8F%8D"><span class="toc-number">1.1.6.1.</span> <span class="toc-text">Reflexive Relation(自反):</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Irreflexive-Relation-%E5%AE%8C%E5%85%A8%E9%9D%9E%E8%87%AA%E5%8F%8D"><span class="toc-number">1.1.6.2.</span> <span class="toc-text">Irreflexive Relation(完全非自反):</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Symmetric-Relation-%E5%AF%B9%E7%A7%B0"><span class="toc-number">1.1.6.3.</span> <span class="toc-text">Symmetric Relation(对称):</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Antisymmetric-Relation-%E5%AE%8C%E5%85%A8%E9%9D%9E%E5%AF%B9%E7%A7%B0"><span class="toc-number">1.1.6.4.</span> <span class="toc-text">Antisymmetric Relation(完全非对称):</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Transitive-Relation-%E4%BC%A0%E9%80%92%E6%80%A7"><span class="toc-number">1.1.6.5.</span> <span class="toc-text">Transitive Relation(传递性):</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Combining-Relations"><span class="toc-number">1.1.7.</span> <span class="toc-text">Combining Relations</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Composite-of-Relations"><span class="toc-number">1.1.7.1.</span> <span class="toc-text">Composite of Relations</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Composing-a-Relation-with-Itself"><span class="toc-number">1.1.7.2.</span> <span class="toc-text">Composing a Relation with Itself</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Transitive-Relation-and-R-n"><span class="toc-number">1.1.7.3.</span> <span class="toc-text">Transitive Relation and $R^n$</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#N-ary-Relations-and-Databases"><span class="toc-number">1.2.</span> <span class="toc-text">N-ary Relations and Databases</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#N-ary-Relations"><span class="toc-number">1.2.1.</span> <span class="toc-text">N-ary Relations</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Relational-Databases"><span class="toc-number">1.2.2.</span> <span class="toc-text">Relational Databases</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Operations-on-Databases"><span class="toc-number">1.2.3.</span> <span class="toc-text">Operations on Databases</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Selection-Operators"><span class="toc-number">1.2.3.1.</span> <span class="toc-text">Selection Operators</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Projection-Operators"><span class="toc-number">1.2.3.2.</span> <span class="toc-text">Projection Operators</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Join-Operators"><span class="toc-number">1.2.3.3.</span> <span class="toc-text">Join Operators</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Closures-of-Relations-%E9%97%AD%E5%8C%85"><span class="toc-number">1.3.</span> <span class="toc-text">Closures of Relations(闭包)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Reflexive-Closures"><span class="toc-number">1.3.1.</span> <span class="toc-text">Reflexive Closures</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Symmetric-Closures"><span class="toc-number">1.3.2.</span> <span class="toc-text">Symmetric Closures</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Paths-and-Transitive-Closures"><span class="toc-number">1.3.3.</span> <span class="toc-text">Paths and Transitive Closures</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Paths-and-Powers-of-a-Relation"><span class="toc-number">1.3.3.1.</span> <span class="toc-text">Paths and Powers of a Relation</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#The-Connectivity-Relation-R"><span class="toc-number">1.3.3.2.</span> <span class="toc-text">The Connectivity Relation R*</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Finding-Transitive-Closures"><span class="toc-number">1.3.3.3.</span> <span class="toc-text">Finding Transitive Closures</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#Naive-algorithm"><span class="toc-number">1.3.3.3.1.</span> <span class="toc-text">Naive algorithm</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#The-Floyd-Warshall-algorithm"><span class="toc-number">1.3.3.3.2.</span> <span class="toc-text">The Floyd-Warshall algorithm:</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Equivalence-Relations"><span class="toc-number">1.4.</span> <span class="toc-text">Equivalence Relations</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Equivalence-Classes"><span class="toc-number">1.4.1.</span> <span class="toc-text">Equivalence Classes</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Partition-of-a-Set-S"><span class="toc-number">1.4.2.</span> <span class="toc-text">Partition of a Set S</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Partial-Orderings"><span class="toc-number">1.5.</span> <span class="toc-text">Partial Orderings</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Comparability"><span class="toc-number">1.5.1.</span> <span class="toc-text">Comparability</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Total-Ordering"><span class="toc-number">1.5.2.</span> <span class="toc-text">Total Ordering</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Cover"><span class="toc-number">1.5.3.</span> <span class="toc-text">Cover</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Hasse-Diagram"><span class="toc-number">1.5.4.</span> <span class="toc-text">Hasse Diagram</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Maximal-and-Minimal-Elements-%E6%9E%81%E5%A4%A7%E5%85%83%EF%BC%8C%E6%9E%81%E5%B0%8F%E5%85%83"><span class="toc-number">1.5.5.</span> <span class="toc-text">Maximal and Minimal Elements(极大元，极小元)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Greatest-and-Least-Elements-%E6%9C%80%E5%A4%A7%E5%85%83%EF%BC%8C%E6%9C%80%E5%B0%8F%E5%85%83"><span class="toc-number">1.5.6.</span> <span class="toc-text">Greatest and Least Elements(最大元，最小元)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Upper-and-Lower-Bounds"><span class="toc-number">1.5.7.</span> <span class="toc-text">Upper and Lower Bounds</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Lattices"><span class="toc-number">1.5.8.</span> <span class="toc-text">Lattices</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Well-Ordered-Induction"><span class="toc-number">1.5.9.</span> <span class="toc-text">Well-Ordered Induction</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Topological-Sorting"><span class="toc-number">1.5.10.</span> <span class="toc-text">Topological Sorting</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Exercise"><span class="toc-number">1.6.</span> <span class="toc-text">Exercise</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-Let-A-a-b-c-and-B-1-2-3"><span class="toc-number">1.6.1.</span> <span class="toc-text">1. Let $A &#x3D; $ {a, b, c} and $B &#x3D; $ {1, 2, 3}</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-Consider-relations-on-A-1-2-3-4"><span class="toc-number">1.6.2.</span> <span class="toc-text">2. Consider relations on A &#x3D; {1, 2, 3, 4}</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-Consider-binary-relations-on-a-finite-set-A-with-A-n"><span class="toc-number">1.6.3.</span> <span class="toc-text">3. Consider binary relations on a finite set A with |A| &#x3D; n:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-Prove-that-%E2%80%9CIf-R-is-transitive-then-Rn-is-also-transitive-%E2%80%9D"><span class="toc-number">1.6.4.</span> <span class="toc-text">4. Prove that “If R is transitive, then Rn is also transitive.”</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-For-the-relation-R-shown-in-the-figure-find-the-Floyd-Warshall-matrices-W-1-W-2-W-3-W-4"><span class="toc-number">1.6.5.</span> <span class="toc-text">5. For the relation R shown in the figure, find the Floyd-Warshall matrices $W_1, W_2, W_3, W_4$.</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-Are-the-following-relations-equivalence-relations"><span class="toc-number">1.6.6.</span> <span class="toc-text">6. Are the following relations equivalence relations?</span></a></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Posts</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/12/09/DSAA%20tree%20review/" title="DSAA tree review">DSAA tree review</a><time datetime="2024-12-09T11:04:52.000Z" title="Created 2024-12-09 19:04:52">2024-12-09</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/11/26/Discrete%20Math%20Chapter%207:Counting/" title="Discrete Math Chapter 7 - Counting"><img src="https://cdn.jsdelivr.net/gh/KaixunWang/pic_bed/img/IMG_E221A630AF2C-1.jpeg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Discrete Math Chapter 7 - Counting"/></a><div class="content"><a class="title" href="/2024/11/26/Discrete%20Math%20Chapter%207:Counting/" title="Discrete Math Chapter 7 - Counting">Discrete Math Chapter 7 - Counting</a><time datetime="2024-11-25T17:04:06.000Z" title="Created 2024-11-26 01:04:06">2024-11-26</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/11/26/Discrete%20Math%20Chapter%208:Relations/" title="Discrete Math Chapter 8 - Relations"><img src="https://cdn.jsdelivr.net/gh/KaixunWang/pic_bed/img/IMG_E221A630AF2C-1.jpeg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Discrete Math Chapter 8 - Relations"/></a><div class="content"><a class="title" href="/2024/11/26/Discrete%20Math%20Chapter%208:Relations/" title="Discrete Math Chapter 8 - Relations">Discrete Math Chapter 8 - Relations</a><time datetime="2024-11-25T17:04:06.000Z" title="Created 2024-11-26 01:04:06">2024-11-26</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/11/24/Discrete%20Math%20Chapter%206:Induction%20and%20Recursion/" title="Discrete Math Chapter 6 - Induction and Recursion"><img src="https://cdn.jsdelivr.net/gh/KaixunWang/pic_bed/img/IMG_E221A630AF2C-1.jpeg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Discrete Math Chapter 6 - Induction and Recursion"/></a><div class="content"><a class="title" href="/2024/11/24/Discrete%20Math%20Chapter%206:Induction%20and%20Recursion/" title="Discrete Math Chapter 6 - Induction and Recursion">Discrete Math Chapter 6 - Induction and Recursion</a><time datetime="2024-11-24T12:53:27.000Z" title="Created 2024-11-24 20:53:27">2024-11-24</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/11/23/Digital%20Logic%20Chapter%205%20part%202:Synchronous%20Sequential%20Logic/" title="Digital Logic Chapter 5 part 2 - Synchronous Sequential Logic"><img src="https://cdn.jsdelivr.net/gh/KaixunWang/pic_bed/img/IMG_F9564093DBE1-1.jpeg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Digital Logic Chapter 5 part 2 - Synchronous Sequential Logic"/></a><div class="content"><a class="title" href="/2024/11/23/Digital%20Logic%20Chapter%205%20part%202:Synchronous%20Sequential%20Logic/" title="Digital Logic Chapter 5 part 2 - Synchronous Sequential Logic">Digital Logic Chapter 5 part 2 - Synchronous Sequential Logic</a><time datetime="2024-11-23T13:22:05.000Z" title="Created 2024-11-23 21:22:05">2024-11-23</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2019 - 2024 By Kaixun Wang</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Reading Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Toggle Between Light and Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle Between Single-column and Double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="Settings"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table of Contents"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="Back to Top"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><script>(() => {
+  const loadMathjax = () => {
+    if (!window.MathJax) {
+      window.MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']],
+          tags: 'ams',
+        },
+        chtml: {
+          scale: 1.1
+        },
+        options: {
+          enableMenu: true,
+          renderActions: {
+            findScript: [10, doc => {
+              for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+                const display = !!node.type.match(/; *mode=display/)
+                const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+                const text = document.createTextNode('')
+                node.parentNode.replaceChild(text, node)
+                math.start = {node: text, delim: '', n: 0}
+                math.end = {node: text, delim: '', n: 0}
+                doc.math.push(math)
+              }
+            }, '']
+          }
+        }
+      }
+      
+      const script = document.createElement('script')
+      script.src = 'https://cdn.jsdelivr.net/npm/mathjax/es5/tex-mml-chtml.min.js'
+      script.id = 'MathJax-script'
+      script.async = true
+      document.head.appendChild(script)
+    } else {
+      MathJax.startup.document.state(0)
+      MathJax.texReset()
+      MathJax.typesetPromise()
+    }
+  }
+
+  btf.addGlobalFn('encrypt', loadMathjax, 'mathjax')
+  window.pjax ? loadMathjax() : window.addEventListener('load', loadMathjax)
+})()</script></div><script defer src="/js/cursor.js"></script><script async src="/js/fps.js"></script><script id="canvas_nest" defer="defer" color="0,0,255" opacity="0.7" zIndex="-1" count="99" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-nest.min.js"></script><script id="click-show-text" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/click-show-text.min.js" data-mobile="false" data-text="Have,a,Nice,Day" data-fontsize="18px" data-random="true" async="async"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">Search</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  Loading Database</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="Search for Posts" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div><!-- hexo injector body_end start --> <script data-pjax>if(document.getElementById('recent-posts') && (location.pathname ==='/'|| '/' ==='all')){
+    var parent = document.getElementById('recent-posts');
+    var child = '<div class="recent-post-item" style="width:100%;height: auto"><div id="catalog_magnet"><div class="magnet_item"><a class="magnet_link" href="http://www.kaixun.online/categories/Digital-Logic/"><div class="magnet_link_context" style=""><span style="font-weight:500;flex:1">📚 CS207 Digital Logic (2)</span><span style="padding:0px 4px;border-radius: 8px;"><i class="fas fa-arrow-circle-right"></i></span></div></a></div><div class="magnet_item"><a class="magnet_link" href="http://www.kaixun.online/categories/Discrete-Math/"><div class="magnet_link_context" style=""><span style="font-weight:500;flex:1">📏 CS203 Discrete Math (3)</span><span style="padding:0px 4px;border-radius: 8px;"><i class="fas fa-arrow-circle-right"></i></span></div></a></div><a class="magnet_link_more"  href="http://www.kaixun.online/categories" style="flex:1;text-align: center;margin-bottom: 10px;">查看更多...</a></div></div>';
+    console.log('已挂载magnet')
+    parent.insertAdjacentHTML("afterbegin",child)}
+     </script><style>#catalog_magnet{flex-wrap: wrap;display: flex;width:100%;justify-content:space-between;padding: 10px 10px 0 10px;align-content: flex-start;}.magnet_item{flex-basis: calc(50% - 5px);background: #f2f2f2;margin-bottom: 10px;border-radius: 8px;transition: all 0.2s ease-in-out;}.magnet_item:hover{background: #b30070}.magnet_link_more{color:#555}.magnet_link{color:black}.magnet_link:hover{color:white}@media screen and (max-width: 600px) {.magnet_item {flex-basis: 100%;}}.magnet_link_context{display:flex;padding: 10px;font-size:16px;transition: all 0.2s ease-in-out;}.magnet_link_context:hover{padding: 10px 20px;}</style>
+    <style></style><script data-pjax>
+  function butterfly_swiper_injector_config(){
+    var parent_div_git = document.getElementById('recent-posts');
+    var item_html = '<div class="recent-post-item" style="height: auto;width: 100%"><div class="blog-slider swiper-container-fade swiper-container-horizontal" id="swiper_container"><div class="blog-slider__wrp swiper-wrapper" style="transition-duration: 0ms;"><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" href="2024/11/24/Discrete Math Chapter 6:Induction and Recursion/" alt=""><img width="48" height="48" src="https://cdn.jsdelivr.net/gh/KaixunWang/pic_bed/img/IMG_E221A630AF2C-1.jpeg" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2024-11-24</span><a class="blog-slider__title" href="2024/11/24/Discrete Math Chapter 6:Induction and Recursion/" alt="">Discrete Math Chapter 6 - Induction and Recursion</a><div class="blog-slider__text">Induction and Recursion</div><a class="blog-slider__button" href="2024/11/24/Discrete Math Chapter 6:Induction and Recursion/" alt="">详情   </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" href="2024/11/26/Discrete Math Chapter 7:Counting/" alt=""><img width="48" height="48" src="https://cdn.jsdelivr.net/gh/KaixunWang/pic_bed/img/IMG_E221A630AF2C-1.jpeg" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2024-11-26</span><a class="blog-slider__title" href="2024/11/26/Discrete Math Chapter 7:Counting/" alt="">Discrete Math Chapter 7 - Counting</a><div class="blog-slider__text">Counting</div><a class="blog-slider__button" href="2024/11/26/Discrete Math Chapter 7:Counting/" alt="">详情   </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" href="2024/11/26/Discrete Math Chapter 8:Relations/" alt=""><img width="48" height="48" src="https://cdn.jsdelivr.net/gh/KaixunWang/pic_bed/img/IMG_E221A630AF2C-1.jpeg" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2024-11-26</span><a class="blog-slider__title" href="2024/11/26/Discrete Math Chapter 8:Relations/" alt="">Discrete Math Chapter 8 - Relations</a><div class="blog-slider__text">Relations</div><a class="blog-slider__button" href="2024/11/26/Discrete Math Chapter 8:Relations/" alt="">详情   </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" href="2024/12/09/DSAA tree review/" alt=""><img width="48" height="48" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2024-12-09</span><a class="blog-slider__title" href="2024/12/09/DSAA tree review/" alt="">DSAA tree review</a><div class="blog-slider__text">Tree review</div><a class="blog-slider__button" href="2024/12/09/DSAA tree review/" alt="">详情   </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" href="2024/11/22/Digital Logic Chapter 5 part1:Latches and Flip-flops/" alt=""><img width="48" height="48" src="https://cdn.jsdelivr.net/gh/KaixunWang/pic_bed/img/IMG_F9564093DBE1-1.jpeg" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2024-11-22</span><a class="blog-slider__title" href="2024/11/22/Digital Logic Chapter 5 part1:Latches and Flip-flops/" alt="">Digital Logic Chapter 5 part 1 - Latches and Flip-flops</a><div class="blog-slider__text">Latches and Flip-flops</div><a class="blog-slider__button" href="2024/11/22/Digital Logic Chapter 5 part1:Latches and Flip-flops/" alt="">详情   </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" href="2024/11/23/Digital Logic Chapter 5 part 2:Synchronous Sequential Logic/" alt=""><img width="48" height="48" src="https://cdn.jsdelivr.net/gh/KaixunWang/pic_bed/img/IMG_F9564093DBE1-1.jpeg" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2024-11-23</span><a class="blog-slider__title" href="2024/11/23/Digital Logic Chapter 5 part 2:Synchronous Sequential Logic/" alt="">Digital Logic Chapter 5 part 2 - Synchronous Sequential Logic</a><div class="blog-slider__text">Synchronous Sequential Logic</div><a class="blog-slider__button" href="2024/11/23/Digital Logic Chapter 5 part 2:Synchronous Sequential Logic/" alt="">详情   </a></div></div></div><div class="blog-slider__pagination swiper-pagination-clickable swiper-pagination-bullets"></div></div></div>';
+    console.log('已挂载butterfly_swiper')
+    parent_div_git.insertAdjacentHTML("afterbegin",item_html)
+    }
+  var elist = 'undefined'.split(',');
+  var cpage = location.pathname;
+  var epage = 'all';
+  var flag = 0;
+
+  for (var i=0;i<elist.length;i++){
+    if (cpage.includes(elist[i])){
+      flag++;
+    }
+  }
+
+  if ((epage ==='all')&&(flag == 0)){
+    butterfly_swiper_injector_config();
+  }
+  else if (epage === cpage){
+    butterfly_swiper_injector_config();
+  }
+  </script><script defer src="https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiper.min.js"></script><script defer data-pjax src="https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiper_init.js"></script><!-- hexo injector body_end end --></body></html>

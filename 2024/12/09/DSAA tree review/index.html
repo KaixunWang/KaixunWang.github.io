@@ -1,0 +1,332 @@
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>DSAA tree review | Kaixun's Blog</title><meta name="author" content="Kaixun Wang"><meta name="copyright" content="Kaixun Wang"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="Tree review">
+<meta property="og:type" content="article">
+<meta property="og:title" content="DSAA tree review">
+<meta property="og:url" content="http://www.kaixun.online/2024/12/09/DSAA%20tree%20review/index.html">
+<meta property="og:site_name" content="Kaixun&#39;s Blog">
+<meta property="og:description" content="Tree review">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://www.kaixun.online/img/avatar.png">
+<meta property="article:published_time" content="2024-12-09T11:04:52.000Z">
+<meta property="article:modified_time" content="2024-12-11T02:21:28.361Z">
+<meta property="article:author" content="Kaixun Wang">
+<meta property="article:tag" content="DSAA">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://www.kaixun.online/img/avatar.png"><link rel="shortcut icon" href="/img/avatar.png"><link rel="canonical" href="http://www.kaixun.online/2024/12/09/DSAA%20tree%20review/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"No results found for: ${query}","hits_stats":"${hits} articles found"}},
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":230,"highlightFullpage":false,"highlightMacStyle":true},
+  copy: {
+    success: 'Copy Successful',
+    error: 'Copy Failed',
+    noSupport: 'Browser Not Supported'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: 'Just now',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: 'Load More'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'DSAA tree review',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  isShuoshuo: false
+}</script><span id="fps"></span><link rel="stylesheet" href="/css/custom.css" media="defer" onload="this.media='all'"><!-- hexo injector head_end start --><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiper.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiperstyle.css" media="print" onload="this.media='all'"><!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">Loading...</div></div></div><script>(()=>{
+  const $loadingBox = document.getElementById('loading-box')
+  const $body = document.body
+  const preloader = {
+    endLoading: () => {
+      $body.style.overflow = ''
+      $loadingBox.classList.add('loaded')
+    },
+    initLoading: () => {
+      $body.style.overflow = 'hidden'
+      $loadingBox.classList.remove('loaded')
+    }
+  }
+
+  preloader.initLoading()
+  window.addEventListener('load', preloader.endLoading)
+
+  if (false) {
+    btf.addGlobalFn('pjaxSend', preloader.initLoading, 'preloader_init')
+    btf.addGlobalFn('pjaxComplete', preloader.endLoading, 'preloader_end')
+  }
+})()</script><div id="web_bg" style="background-image: url(/img/favicon.jpg);"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/avatar.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">7</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">4</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">3</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archive</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(/img/favicon.jpg);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">Kaixun's Blog</span></a><a class="nav-page-title" href="/"><span class="site-name">DSAA tree review</span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> Search</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archive</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">DSAA tree review</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2024-12-09T11:04:52.000Z" title="Created 2024-12-09 19:04:52">2024-12-09</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2024-12-11T02:21:28.361Z" title="Updated 2024-12-11 10:21:28">2024-12-11</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/DSAA/">DSAA</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post Views:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><h1 id="DSAA-Tree-Review"><a href="#DSAA-Tree-Review" class="headerlink" title="DSAA Tree Review"></a>DSAA Tree Review</h1><h2 id="Tree"><a href="#Tree" class="headerlink" title="Tree"></a>Tree</h2><h3 id="Basic-Concepts"><a href="#Basic-Concepts" class="headerlink" title="Basic Concepts"></a>Basic Concepts</h3><p><img src="../../../Desktop/截屏2024-12-09 19.09.42.png" alt="截屏2024-12-09 19.09.42" style="zoom:50%;" /></p>
+<h3 id="Properties-of-Tree-binary-tree"><a href="#Properties-of-Tree-binary-tree" class="headerlink" title="Properties of Tree(binary tree)"></a>Properties of Tree(binary tree)</h3><h4 id="1-A-tree-with-n-nodes-with-n-1-edges"><a href="#1-A-tree-with-n-nodes-with-n-1-edges" class="headerlink" title="1. A tree with n nodes with n-1 edges."></a>1. A tree with n nodes with n-1 edges.</h4><p>Prove: Every node is pointed at by an edge except for the root.</p>
+<h4 id="2-Let-T-be-a-tree-where-every-internal-node-has-at-least-2-child-nodes-If-m-is-the-number-of-leaf-nodes-then-the-number-of-internal-nodes-is-at-most-m-1"><a href="#2-Let-T-be-a-tree-where-every-internal-node-has-at-least-2-child-nodes-If-m-is-the-number-of-leaf-nodes-then-the-number-of-internal-nodes-is-at-most-m-1" class="headerlink" title="2. Let T be a tree where every internal node has at least 2 child nodes. If m is the number of leaf nodes, then the number of internal nodes is at most m-1."></a>2. Let T be a tree where every internal node has at least 2 child nodes. If m is the number of leaf nodes, then the number of internal nodes is at most m-1.</h4><p>Prove: Let n denote the total number of nodes in the tree.</p>
+<script type="math/tex; mode=display">n=i+m</script><p>Where i is the number of internal nodes, m is the number of leaf nodes.</p>
+<p>A tree has n-1 edges.</p>
+<p>Each internal nodes contributes at least 2 edges. Let the total numbet of edges connected to internal nodes be $2i$. However, note that $i-1$ of these edges are internal connections.</p>
+<script type="math/tex; mode=display">n-1 = i+m-1</script><script type="math/tex; mode=display">2i\leq i+m -1 \longrightarrow i\leq m-1</script><h4 id="3-A-complete-binary-tree-with-n-≥-2-nodes-has-height-O-log-n"><a href="#3-A-complete-binary-tree-with-n-≥-2-nodes-has-height-O-log-n" class="headerlink" title="3. A complete binary tree with n ≥ 2 nodes has height O(log n)"></a>3. A complete binary tree with n ≥ 2 nodes has height O(log n)</h4><p>Prove: In the k-th level, there can be at most $2^k$ nodes.</p>
+<p>The total number of nodes in a complete binary tree of height h is</p>
+<script type="math/tex; mode=display">1+2+4+...+2^h=2^{h+1}-1</script><script type="math/tex; mode=display">2^h\leq n \leq2^{h+1}-1</script><script type="math/tex; mode=display">h\leq log_2n \leq h+1 \longrightarrow h=\lfloor log_2n\rfloor</script><script type="math/tex; mode=display">h \in O(log\ n)</script><h3 id="Binary-Tree-Traversal"><a href="#Binary-Tree-Traversal" class="headerlink" title="Binary Tree Traversal"></a>Binary Tree Traversal</h3><h4 id="Preorder-Traversal"><a href="#Preorder-Traversal" class="headerlink" title="Preorder Traversal"></a>Preorder Traversal</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">preorderprint(treeNode root):</span><br><span class="line">1. print(root)</span><br><span class="line">2. if(root-&gt;left!=null)</span><br><span class="line">3. preorderprint(root-&gt;left)</span><br><span class="line">4. if(root-&gt;right!=null)</span><br><span class="line">5. preorderprint(root-&gt;right)</span><br></pre></td></tr></table></figure>
+<h4 id="Inorder-Traversal"><a href="#Inorder-Traversal" class="headerlink" title="Inorder Traversal"></a>Inorder Traversal</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">inorderprint(treeNode root):</span><br><span class="line">1. if(root-&gt;left!=null)</span><br><span class="line">2. inorderprint(root-&gt;left)</span><br><span class="line">3. print(root)</span><br><span class="line">4. if(root-&gt;right!=null)</span><br><span class="line">5. inorderprint(root-&gt;right)</span><br></pre></td></tr></table></figure>
+<h4 id="Postorder-Traversal"><a href="#Postorder-Traversal" class="headerlink" title="Postorder Traversal"></a>Postorder Traversal</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">postorderprint(treeNode root):</span><br><span class="line">1. if(root-&gt;left!=null)</span><br><span class="line">2. postorderprint(root-&gt;left)</span><br><span class="line">3. if(root-&gt;right!=null)</span><br><span class="line">4. postorderprint(root-&gt;right)</span><br><span class="line">5. print(root)</span><br></pre></td></tr></table></figure>
+<h4 id="Level-Traversal"><a href="#Level-Traversal" class="headerlink" title="Level Traversal"></a>Level Traversal</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">levelprint(treeNode root):</span><br><span class="line">1. queue cur = new queue</span><br><span class="line">2. root.inqueue();</span><br><span class="line">3. treeNode cur = root;</span><br><span class="line">4. while(!cur.isEmpty())&#123;</span><br><span class="line">5. cur.children.inqueue;</span><br><span class="line">6. cur.dequeue;</span><br></pre></td></tr></table></figure>
+<h2 id="Binary-Tree-applications"><a href="#Binary-Tree-applications" class="headerlink" title="Binary Tree applications"></a>Binary Tree applications</h2><h3 id="Algebraic-expression"><a href="#Algebraic-expression" class="headerlink" title="Algebraic expression"></a>Algebraic expression</h3><p><img src="../../../Desktop/截屏2024-12-09 21.28.07.png" alt="截屏2024-12-09 21.28.07" style="zoom:33%;" /></p>
+<p><strong>Inorder</strong> gives conventional algebraic notation</p>
+<p>print “(” before visit left tree</p>
+<p>print “)” after visit right tree </p>
+<p>for tree at right: ((a+(b*c))-(d/e))</p>
+<p><strong>Preorder</strong> gives functional notations</p>
+<p>Print “(” and “)” as for inorder, and commas after visit left subtree </p>
+<p>for tree above: subtr(add(a,mult(b,c)),divide(d,e))</p>
+<p><strong>Postorde</strong>r gives the order in which the computation must be carried out on a stack.</p>
+<p>for tree above: push a, push b, push c, multiply, add, …</p>
+<h3 id="Huffman-encoding"><a href="#Huffman-encoding" class="headerlink" title="Huffman encoding"></a>Huffman encoding</h3><p>Huffman encoding is a type of variable-length encoding that is based on the actual character frequencies in a given document.</p>
+<p>Huffman encoding uses a binary tree:</p>
+<p>to determine the encoding of each character</p>
+<p>to decode an encoded file</p>
+<p>Example:</p>
+<p><img src="../../../Desktop/截屏2024-12-09 21.59.45.png" alt="截屏2024-12-09 21.59.45" style="zoom:40%;" /></p>
+<p>Leaf nodes are characters</p>
+<p>101 = ‘D’</p>
+<p>“000110” = “EEEL”</p>
+<h4 id="Construction"><a href="#Construction" class="headerlink" title="Construction"></a>Construction</h4><p>Begin by reading through the text to determine the frequencies</p>
+<p>Create a list of nodes that contain (character, frequency) pairs for each character that appears in text</p>
+<p>Remove and “merge” the nodes with the two lowest frequencies, forming a new node that is their parent</p>
+<p>Add the parent to the list of nodes </p>
+<p>Repeat steps 3) and 4) until there is only a single node in the list, which will be the root of the Huffman tree.</p>
+<h4 id="Correctness"><a href="#Correctness" class="headerlink" title="Correctness"></a>Correctness</h4><p>Given a Huffman tree, it includes at least 2 nodes, assume node u and node v have the top-2 lowest frequencies, then</p>
+<p>node u and v have the same parent node</p>
+<p>depth(u) and depth(v) &gt;= depth(x), where node x is any leaf node in the Huffman tree.</p>
+<p>Huffman encoding is the optimum prefix code, i.e., the space cost is minimized.</p>
+<h2 id="Priority-Queue"><a href="#Priority-Queue" class="headerlink" title="Priority Queue"></a>Priority Queue</h2><h3 id="Definition"><a href="#Definition" class="headerlink" title="Definition"></a>Definition</h3><p>We will implement a priority queue using a data structure called the “binary heap” to achieve the following guarantees:</p>
+<p>O(n) space consumption</p>
+<p>O(log n) insertion time</p>
+<p>O(log n) delete-min time</p>
+<p>The binary heap data structure is an array object that we can view as a complete binary tree.</p>
+<p>Level 0 to h-1 are full</p>
+<p>Leaf nodes in level h are “as far left as possible”</p>
+<p>Let S be a set of n integers. A binary heap on S is a binary tree T satisfying:</p>
+<p>(1) T is complete</p>
+<p>(2) Every node u in T corresponds to a distinct integer in S, the integer is called the key of u (and is stored at u)</p>
+<p>(3) If u is an internal node, the key of u is smaller than those of its child nodes</p>
+<p>Note that:</p>
+<p>Condition 2 implies that T has n nodes.</p>
+<p>Condition 3 implies that the key of u is the smallest in the subtree of u.</p>
+<p><img src="../../../Desktop/截屏2024-12-09 22.18.06.png" alt="截屏2024-12-09 22.18.06" style="zoom:50%;" /></p>
+<h3 id="Insertion-delete-min"><a href="#Insertion-delete-min" class="headerlink" title="Insertion / delete-min"></a>Insertion / delete-min</h3><p><strong>Binary Heap Insertion</strong></p>
+<p>We perform insert(e) on a binary heap T as follows:</p>
+<p>Step 1: Create a leaf node z with key e, while ensuring that T is a complete binary tree, it means there is only one place where z could be added.</p>
+<p>Step 2: Set u &lt;-z</p>
+<p>Step 3: If u is the root, return.</p>
+<p>Step 4: If the key of u &gt; the key of its parent p, return</p>
+<p>Step 5: Otherwise, swap the keys of u and p. Set u &lt;- p, and repeat from Step 3.</p>
+<p><strong>Binary Heap Delete-min</strong></p>
+<p>We perform delete-min on a binary heap T as follows:</p>
+<p>Step 1: Report the key of the root</p>
+<p>Step 2: Identify the rightmost leaf z at the bottom level of T</p>
+<p>Step 3: Delete z, and store the key of z at the root</p>
+<p>Step 4: Set u &lt;- the root</p>
+<p>Step 5: If u is leaf, return</p>
+<p>Step 6: If the key of u &lt; the keys of the children of u, return</p>
+<p>Step 7: Otherwise, let v be the child of u with a smaller key. Swap the keys of u and v. Set u &lt;-v, and repeat from Step 5</p>
+<h4 id="Find-Rightmost-Leaf"><a href="#Find-Rightmost-Leaf" class="headerlink" title="Find Rightmost Leaf"></a>Find Rightmost Leaf</h4><p>Write the value n in binary form. We can do that in O(log n) time. </p>
+<p>Skip the most significant bit. We will scan the remaining bits from left to right, start from root, </p>
+<p>If the bit is 0, we go to the left child of the current node</p>
+<p>Otherwise, go to right child</p>
+<p><img src="../../../Desktop/截屏2024-12-09 22.28.37.png" alt="截屏2024-12-09 22.28.37" style="zoom:33%;" /></p>
+<h2 id="Binary-Heaps-in-Dynamic-Arrays"><a href="#Binary-Heaps-in-Dynamic-Arrays" class="headerlink" title="Binary Heaps in Dynamic Arrays"></a>Binary Heaps in Dynamic Arrays</h2><p>Lemma: Suppose that node u of T is stored  at A[i]. Then, the left child of u is  stored at A[2i], and the right child at  A[2i+1].</p>
+<p>Corollary: Suppose that node u of T is  stored at A[i]. Then, the parent of u is  stored at A[ i/2 ].</p>
+<p>Lemma: the rightmost leaf node at the  bottom level is stored at A[n].</p>
+<h3 id="O-n-time-to-build-min-heap"><a href="#O-n-time-to-build-min-heap" class="headerlink" title="O(n) time to build min-heap"></a>O(n) time to build min-heap</h3><p>Root fix:</p>
+<p>From i=n down to i=1:</p>
+<p>swap A[i] and the less child of it.</p>
+<p>Proof:</p>
+<p>假设目标堆是一个满堆，即第 k 层节点数为 2ᵏ。输入数组规模为 n, 堆的高度为 h, 那么 n 与 h 之间满足 <strong>n=2ʰ⁺¹ - 1</strong>，可化为 <strong>h=log₂(n+1) - 1</strong>。 (层数 k 和高度 h <strong>均从 0 开始</strong>，即只有根节点的堆高度为0，空堆高度为 -1)。</p>
+<p>建堆过程中每个节点需要一次下滤操作，交换的次数等于该节点到叶节点的深度。那么每一层中所有节点的交换次数为节点个数乘以叶节点到该节点的深度（如第一层的交换次数为 2⁰ · h，第二层的交换次数为 2¹ · (h-1)，如此类推）。从堆顶到最后一层的交换次数 Sn 进行求和：</p>
+<script type="math/tex; mode=display">S_n = 2^0 \cdot h + 2^1 \cdot (h - 1) + 2^2 \cdot (h - 2) + \cdots + 2^{h-2} \cdot 2 + 2^{h-1} \cdot 1 + 2^h \cdot 0</script><script type="math/tex; mode=display">S_n = h + 2^1 \cdot (h - 1) + 2^2 \cdot (h - 2) + \cdots + 2^{h-2} \cdot 2 + 2^{h-1}</script><p>乘2得</p>
+<script type="math/tex; mode=display">2S_n = 2^1 \cdot h + 2^2 \cdot (h - 1) + 2^3 \cdot (h - 2) + \cdots + 2^{h-1} \cdot 2 + 2^h</script><p>相减得</p>
+<script type="math/tex; mode=display">S_n = -h + 2^1 + 2^2 + 2^3 + \cdots + 2^{h-1} + 2^h</script><p>等比数列求和</p>
+<script type="math/tex; mode=display">S_n=-h+\dfrac{2*(1-2^h)}{1-2}</script><script type="math/tex; mode=display">S_n = 2^{h+1} - (h + 2)</script><p>在前置条件中已得到堆的节点数 n 与高度 h 满足 条件 $n=2^{h+1} - 1$ 和 $h=log_2(n+1) - 1$，分别代入:</p>
+<script type="math/tex; mode=display">S_n = n - log₂(n + 1)=O(n)</script><h2 id="Binary-Search-Tree"><a href="#Binary-Search-Tree" class="headerlink" title="Binary Search Tree"></a>Binary Search Tree</h2><h3 id="BST-operations"><a href="#BST-operations" class="headerlink" title="BST operations"></a>BST operations</h3><h3 id="Balanced-BST"><a href="#Balanced-BST" class="headerlink" title="Balanced BST"></a>Balanced BST</h3></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>Author: </span><span class="post-copyright-info"><a href="http://www.kaixun.online">Kaixun Wang</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>Link: </span><span class="post-copyright-info"><a href="http://www.kaixun.online/2024/12/09/DSAA%20tree%20review/">http://www.kaixun.online/2024/12/09/DSAA%20tree%20review/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>Copyright Notice: </span><span class="post-copyright-info">All articles on this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless otherwise stated.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/DSAA/">DSAA</a></div><div class="post-share"><div class="social-share" data-image="/img/avatar.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related full-width" href="/2024/11/26/Discrete%20Math%20Chapter%207:Counting/" title="Discrete Math Chapter 7 - Counting"><img class="cover" src="https://cdn.jsdelivr.net/gh/KaixunWang/pic_bed/img/IMG_E221A630AF2C-1.jpeg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="info text-right"><div class="info-1"><div class="info-item-1">Next</div><div class="info-item-2">Discrete Math Chapter 7 - Counting</div></div><div class="info-2"><div class="info-item-1">Counting</div></div></div></a></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/avatar.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">Kaixun Wang</div><div class="author-info-description">Just another blogger</div><div class="site-data"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">7</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">4</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">3</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://space.bilibili.com/356340269" target="_blank" title="bilibili"><i class="fab fa-bilibili" style="color: #4a7dbe;"></i></a><a class="social-icon" href="mailto:12310803@mail.sustech.edu.cn" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #4a7dbe;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Contents</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#DSAA-Tree-Review"><span class="toc-number">1.</span> <span class="toc-text">DSAA Tree Review</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Tree"><span class="toc-number">1.1.</span> <span class="toc-text">Tree</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Basic-Concepts"><span class="toc-number">1.1.1.</span> <span class="toc-text">Basic Concepts</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Properties-of-Tree-binary-tree"><span class="toc-number">1.1.2.</span> <span class="toc-text">Properties of Tree(binary tree)</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-A-tree-with-n-nodes-with-n-1-edges"><span class="toc-number">1.1.2.1.</span> <span class="toc-text">1. A tree with n nodes with n-1 edges.</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-Let-T-be-a-tree-where-every-internal-node-has-at-least-2-child-nodes-If-m-is-the-number-of-leaf-nodes-then-the-number-of-internal-nodes-is-at-most-m-1"><span class="toc-number">1.1.2.2.</span> <span class="toc-text">2. Let T be a tree where every internal node has at least 2 child nodes. If m is the number of leaf nodes, then the number of internal nodes is at most m-1.</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-A-complete-binary-tree-with-n-%E2%89%A5-2-nodes-has-height-O-log-n"><span class="toc-number">1.1.2.3.</span> <span class="toc-text">3. A complete binary tree with n ≥ 2 nodes has height O(log n)</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Binary-Tree-Traversal"><span class="toc-number">1.1.3.</span> <span class="toc-text">Binary Tree Traversal</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Preorder-Traversal"><span class="toc-number">1.1.3.1.</span> <span class="toc-text">Preorder Traversal</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Inorder-Traversal"><span class="toc-number">1.1.3.2.</span> <span class="toc-text">Inorder Traversal</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Postorder-Traversal"><span class="toc-number">1.1.3.3.</span> <span class="toc-text">Postorder Traversal</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Level-Traversal"><span class="toc-number">1.1.3.4.</span> <span class="toc-text">Level Traversal</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Binary-Tree-applications"><span class="toc-number">1.2.</span> <span class="toc-text">Binary Tree applications</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Algebraic-expression"><span class="toc-number">1.2.1.</span> <span class="toc-text">Algebraic expression</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Huffman-encoding"><span class="toc-number">1.2.2.</span> <span class="toc-text">Huffman encoding</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Construction"><span class="toc-number">1.2.2.1.</span> <span class="toc-text">Construction</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Correctness"><span class="toc-number">1.2.2.2.</span> <span class="toc-text">Correctness</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Priority-Queue"><span class="toc-number">1.3.</span> <span class="toc-text">Priority Queue</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Definition"><span class="toc-number">1.3.1.</span> <span class="toc-text">Definition</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Insertion-delete-min"><span class="toc-number">1.3.2.</span> <span class="toc-text">Insertion &#x2F; delete-min</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Find-Rightmost-Leaf"><span class="toc-number">1.3.2.1.</span> <span class="toc-text">Find Rightmost Leaf</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Binary-Heaps-in-Dynamic-Arrays"><span class="toc-number">1.4.</span> <span class="toc-text">Binary Heaps in Dynamic Arrays</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#O-n-time-to-build-min-heap"><span class="toc-number">1.4.1.</span> <span class="toc-text">O(n) time to build min-heap</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Binary-Search-Tree"><span class="toc-number">1.5.</span> <span class="toc-text">Binary Search Tree</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#BST-operations"><span class="toc-number">1.5.1.</span> <span class="toc-text">BST operations</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Balanced-BST"><span class="toc-number">1.5.2.</span> <span class="toc-text">Balanced BST</span></a></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Posts</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/12/09/DSAA%20tree%20review/" title="DSAA tree review">DSAA tree review</a><time datetime="2024-12-09T11:04:52.000Z" title="Created 2024-12-09 19:04:52">2024-12-09</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/11/26/Discrete%20Math%20Chapter%207:Counting/" title="Discrete Math Chapter 7 - Counting"><img src="https://cdn.jsdelivr.net/gh/KaixunWang/pic_bed/img/IMG_E221A630AF2C-1.jpeg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Discrete Math Chapter 7 - Counting"/></a><div class="content"><a class="title" href="/2024/11/26/Discrete%20Math%20Chapter%207:Counting/" title="Discrete Math Chapter 7 - Counting">Discrete Math Chapter 7 - Counting</a><time datetime="2024-11-25T17:04:06.000Z" title="Created 2024-11-26 01:04:06">2024-11-26</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/11/26/Discrete%20Math%20Chapter%208:Relations/" title="Discrete Math Chapter 8 - Relations"><img src="https://cdn.jsdelivr.net/gh/KaixunWang/pic_bed/img/IMG_E221A630AF2C-1.jpeg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Discrete Math Chapter 8 - Relations"/></a><div class="content"><a class="title" href="/2024/11/26/Discrete%20Math%20Chapter%208:Relations/" title="Discrete Math Chapter 8 - Relations">Discrete Math Chapter 8 - Relations</a><time datetime="2024-11-25T17:04:06.000Z" title="Created 2024-11-26 01:04:06">2024-11-26</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/11/24/Discrete%20Math%20Chapter%206:Induction%20and%20Recursion/" title="Discrete Math Chapter 6 - Induction and Recursion"><img src="https://cdn.jsdelivr.net/gh/KaixunWang/pic_bed/img/IMG_E221A630AF2C-1.jpeg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Discrete Math Chapter 6 - Induction and Recursion"/></a><div class="content"><a class="title" href="/2024/11/24/Discrete%20Math%20Chapter%206:Induction%20and%20Recursion/" title="Discrete Math Chapter 6 - Induction and Recursion">Discrete Math Chapter 6 - Induction and Recursion</a><time datetime="2024-11-24T12:53:27.000Z" title="Created 2024-11-24 20:53:27">2024-11-24</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/11/23/Digital%20Logic%20Chapter%205%20part%202:Synchronous%20Sequential%20Logic/" title="Digital Logic Chapter 5 part 2 - Synchronous Sequential Logic"><img src="https://cdn.jsdelivr.net/gh/KaixunWang/pic_bed/img/IMG_F9564093DBE1-1.jpeg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Digital Logic Chapter 5 part 2 - Synchronous Sequential Logic"/></a><div class="content"><a class="title" href="/2024/11/23/Digital%20Logic%20Chapter%205%20part%202:Synchronous%20Sequential%20Logic/" title="Digital Logic Chapter 5 part 2 - Synchronous Sequential Logic">Digital Logic Chapter 5 part 2 - Synchronous Sequential Logic</a><time datetime="2024-11-23T13:22:05.000Z" title="Created 2024-11-23 21:22:05">2024-11-23</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2019 - 2024 By Kaixun Wang</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Reading Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Toggle Between Light and Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle Between Single-column and Double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="Settings"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table of Contents"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="Back to Top"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><script>(() => {
+  const loadMathjax = () => {
+    if (!window.MathJax) {
+      window.MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']],
+          tags: 'ams',
+        },
+        chtml: {
+          scale: 1.1
+        },
+        options: {
+          enableMenu: true,
+          renderActions: {
+            findScript: [10, doc => {
+              for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+                const display = !!node.type.match(/; *mode=display/)
+                const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+                const text = document.createTextNode('')
+                node.parentNode.replaceChild(text, node)
+                math.start = {node: text, delim: '', n: 0}
+                math.end = {node: text, delim: '', n: 0}
+                doc.math.push(math)
+              }
+            }, '']
+          }
+        }
+      }
+      
+      const script = document.createElement('script')
+      script.src = 'https://cdn.jsdelivr.net/npm/mathjax/es5/tex-mml-chtml.min.js'
+      script.id = 'MathJax-script'
+      script.async = true
+      document.head.appendChild(script)
+    } else {
+      MathJax.startup.document.state(0)
+      MathJax.texReset()
+      MathJax.typesetPromise()
+    }
+  }
+
+  btf.addGlobalFn('encrypt', loadMathjax, 'mathjax')
+  window.pjax ? loadMathjax() : window.addEventListener('load', loadMathjax)
+})()</script></div><script defer src="/js/cursor.js"></script><script async src="/js/fps.js"></script><script id="canvas_nest" defer="defer" color="0,0,255" opacity="0.7" zIndex="-1" count="99" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-nest.min.js"></script><script id="click-show-text" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/click-show-text.min.js" data-mobile="false" data-text="Have,a,Nice,Day" data-fontsize="18px" data-random="true" async="async"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">Search</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  Loading Database</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="Search for Posts" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div><!-- hexo injector body_end start --> <script data-pjax>if(document.getElementById('recent-posts') && (location.pathname ==='/'|| '/' ==='all')){
+    var parent = document.getElementById('recent-posts');
+    var child = '<div class="recent-post-item" style="width:100%;height: auto"><div id="catalog_magnet"><div class="magnet_item"><a class="magnet_link" href="http://www.kaixun.online/categories/Digital-Logic/"><div class="magnet_link_context" style=""><span style="font-weight:500;flex:1">📚 CS207 Digital Logic (2)</span><span style="padding:0px 4px;border-radius: 8px;"><i class="fas fa-arrow-circle-right"></i></span></div></a></div><div class="magnet_item"><a class="magnet_link" href="http://www.kaixun.online/categories/Discrete-Math/"><div class="magnet_link_context" style=""><span style="font-weight:500;flex:1">📏 CS203 Discrete Math (3)</span><span style="padding:0px 4px;border-radius: 8px;"><i class="fas fa-arrow-circle-right"></i></span></div></a></div><a class="magnet_link_more"  href="http://www.kaixun.online/categories" style="flex:1;text-align: center;margin-bottom: 10px;">查看更多...</a></div></div>';
+    console.log('已挂载magnet')
+    parent.insertAdjacentHTML("afterbegin",child)}
+     </script><style>#catalog_magnet{flex-wrap: wrap;display: flex;width:100%;justify-content:space-between;padding: 10px 10px 0 10px;align-content: flex-start;}.magnet_item{flex-basis: calc(50% - 5px);background: #f2f2f2;margin-bottom: 10px;border-radius: 8px;transition: all 0.2s ease-in-out;}.magnet_item:hover{background: #b30070}.magnet_link_more{color:#555}.magnet_link{color:black}.magnet_link:hover{color:white}@media screen and (max-width: 600px) {.magnet_item {flex-basis: 100%;}}.magnet_link_context{display:flex;padding: 10px;font-size:16px;transition: all 0.2s ease-in-out;}.magnet_link_context:hover{padding: 10px 20px;}</style>
+    <style></style><script data-pjax>
+  function butterfly_swiper_injector_config(){
+    var parent_div_git = document.getElementById('recent-posts');
+    var item_html = '<div class="recent-post-item" style="height: auto;width: 100%"><div class="blog-slider swiper-container-fade swiper-container-horizontal" id="swiper_container"><div class="blog-slider__wrp swiper-wrapper" style="transition-duration: 0ms;"><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" href="2024/11/24/Discrete Math Chapter 6:Induction and Recursion/" alt=""><img width="48" height="48" src="https://cdn.jsdelivr.net/gh/KaixunWang/pic_bed/img/IMG_E221A630AF2C-1.jpeg" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2024-11-24</span><a class="blog-slider__title" href="2024/11/24/Discrete Math Chapter 6:Induction and Recursion/" alt="">Discrete Math Chapter 6 - Induction and Recursion</a><div class="blog-slider__text">Induction and Recursion</div><a class="blog-slider__button" href="2024/11/24/Discrete Math Chapter 6:Induction and Recursion/" alt="">详情   </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" href="2024/11/26/Discrete Math Chapter 7:Counting/" alt=""><img width="48" height="48" src="https://cdn.jsdelivr.net/gh/KaixunWang/pic_bed/img/IMG_E221A630AF2C-1.jpeg" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2024-11-26</span><a class="blog-slider__title" href="2024/11/26/Discrete Math Chapter 7:Counting/" alt="">Discrete Math Chapter 7 - Counting</a><div class="blog-slider__text">Counting</div><a class="blog-slider__button" href="2024/11/26/Discrete Math Chapter 7:Counting/" alt="">详情   </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" href="2024/11/26/Discrete Math Chapter 8:Relations/" alt=""><img width="48" height="48" src="https://cdn.jsdelivr.net/gh/KaixunWang/pic_bed/img/IMG_E221A630AF2C-1.jpeg" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2024-11-26</span><a class="blog-slider__title" href="2024/11/26/Discrete Math Chapter 8:Relations/" alt="">Discrete Math Chapter 8 - Relations</a><div class="blog-slider__text">Relations</div><a class="blog-slider__button" href="2024/11/26/Discrete Math Chapter 8:Relations/" alt="">详情   </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" href="2024/12/09/DSAA tree review/" alt=""><img width="48" height="48" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2024-12-09</span><a class="blog-slider__title" href="2024/12/09/DSAA tree review/" alt="">DSAA tree review</a><div class="blog-slider__text">Tree review</div><a class="blog-slider__button" href="2024/12/09/DSAA tree review/" alt="">详情   </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" href="2024/11/22/Digital Logic Chapter 5 part1:Latches and Flip-flops/" alt=""><img width="48" height="48" src="https://cdn.jsdelivr.net/gh/KaixunWang/pic_bed/img/IMG_F9564093DBE1-1.jpeg" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2024-11-22</span><a class="blog-slider__title" href="2024/11/22/Digital Logic Chapter 5 part1:Latches and Flip-flops/" alt="">Digital Logic Chapter 5 part 1 - Latches and Flip-flops</a><div class="blog-slider__text">Latches and Flip-flops</div><a class="blog-slider__button" href="2024/11/22/Digital Logic Chapter 5 part1:Latches and Flip-flops/" alt="">详情   </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" href="2024/11/23/Digital Logic Chapter 5 part 2:Synchronous Sequential Logic/" alt=""><img width="48" height="48" src="https://cdn.jsdelivr.net/gh/KaixunWang/pic_bed/img/IMG_F9564093DBE1-1.jpeg" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2024-11-23</span><a class="blog-slider__title" href="2024/11/23/Digital Logic Chapter 5 part 2:Synchronous Sequential Logic/" alt="">Digital Logic Chapter 5 part 2 - Synchronous Sequential Logic</a><div class="blog-slider__text">Synchronous Sequential Logic</div><a class="blog-slider__button" href="2024/11/23/Digital Logic Chapter 5 part 2:Synchronous Sequential Logic/" alt="">详情   </a></div></div></div><div class="blog-slider__pagination swiper-pagination-clickable swiper-pagination-bullets"></div></div></div>';
+    console.log('已挂载butterfly_swiper')
+    parent_div_git.insertAdjacentHTML("afterbegin",item_html)
+    }
+  var elist = 'undefined'.split(',');
+  var cpage = location.pathname;
+  var epage = 'all';
+  var flag = 0;
+
+  for (var i=0;i<elist.length;i++){
+    if (cpage.includes(elist[i])){
+      flag++;
+    }
+  }
+
+  if ((epage ==='all')&&(flag == 0)){
+    butterfly_swiper_injector_config();
+  }
+  else if (epage === cpage){
+    butterfly_swiper_injector_config();
+  }
+  </script><script defer src="https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiper.min.js"></script><script defer data-pjax src="https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiper_init.js"></script><!-- hexo injector body_end end --></body></html>
